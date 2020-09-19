@@ -15,21 +15,27 @@ namespace IDontCare
     [HarmonyPatch(new Type[] { typeof(LogEntry) })]
     public static class IDontCarePatch
     {
-        public static bool IsDebugLogging = true;
+        public static bool IsDebugLogging = false;
         public static bool ShouldCheckByFactions = true;
         public static ImportanceEnum PlayerCareImportanceLevel = ImportanceEnum.Important;
 
-        public static bool Prefix(ref LogEntry logEntry)
+        public static bool Prefix(ref LogEntry log)
         {
             bool shouldPlayerCare = false;
 
+            // Only IChatNotification log entries are actually displayed to player. Rest are saved in history.
+            if (!(log is IChatNotification)) 
+            {
+                return true;
+            }
+
             if (ShouldCheckByFactions)
             {
-                shouldPlayerCare = CheckByFactionsShouldPlayerCare(logEntry);
+                shouldPlayerCare = CheckByFactionsShouldPlayerCare(log);
             }
             else
             {
-                shouldPlayerCare = CheckByImportanceShouldPlayerCare(logEntry);
+                shouldPlayerCare = CheckByImportanceShouldPlayerCare(log);
             }
 
             return shouldPlayerCare;
