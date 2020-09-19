@@ -16,20 +16,6 @@ namespace IDontCare
 
             var harmony = new Harmony("pajtajster.idontcare.patch");
             harmony.PatchAll();
-
-            Module.CurrentModule.AddInitialStateOption(new InitialStateOption("Change Importance",
-                new TextObject("Change Importance", null),
-                9990,
-                () => {
-                    var currentImportance = (int)IDontCarePatch.PlayerCareImportanceLevel;
-                    var newImportance = (ImportanceEnum)(++currentImportance);
-                    if (!Enum.IsDefined(typeof(ImportanceEnum), newImportance))
-                        IDontCarePatch.PlayerCareImportanceLevel = default(ImportanceEnum);
-                    else
-                        IDontCarePatch.PlayerCareImportanceLevel = newImportance;
-                    InformationManager.DisplayMessage(new InformationMessage($"Current importance: {IDontCarePatch.PlayerCareImportanceLevel}"));
-                },
-                false));
         }
 
         public override void OnCampaignStart(Game game, object starterObject)
