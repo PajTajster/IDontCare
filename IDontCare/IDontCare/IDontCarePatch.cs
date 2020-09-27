@@ -15,10 +15,6 @@ namespace IDontCare
     [HarmonyPatch(new Type[] { typeof(LogEntry) })]
     public static class IDontCarePatch
     {
-        public static bool IsDebugLogging = false;
-        public static bool ShouldCheckByFactions = true;
-        public static ImportanceEnum PlayerCareImportanceLevel = ImportanceEnum.Important;
-
         public static bool Prefix(ref LogEntry log)
         {
             bool shouldPlayerCare = false;
@@ -29,13 +25,13 @@ namespace IDontCare
                 return true;
             }
 
-            if (ShouldCheckByFactions)
+            if (!IDontCareMenu.IsBlockEverythingMode) 
             {
                 shouldPlayerCare = CheckByFactionsShouldPlayerCare(log);
             }
             else
             {
-                shouldPlayerCare = CheckByImportanceShouldPlayerCare(log);
+                shouldPlayerCare = false;
             }
 
             return shouldPlayerCare;
@@ -44,102 +40,269 @@ namespace IDontCare
         private static bool CheckByFactionsShouldPlayerCare(LogEntry logEntry)
         {
             bool shouldPlayerCare = false;
+            bool isFilterOverriden = false;
 
-            // Put into list, to not repeat same damn code every switch case block
             var factionsInvolved = new List<IFaction>();
 
             switch (logEntry)
             {
                 case ArmyDispersionLogEntry armyDispersion:
                     {
-                        var armyLeader = GetLogEntryPrivateField(armyDispersion, "_armyLeader") as CharacterObject;
-                        factionsInvolved.Add(armyLeader?.HeroObject?.MapFaction);
+                        if (IDontCareMenu.ArmyDispersionFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                        {
+                            var armyLeader = GetLogEntryPrivateField(armyDispersion, "_armyLeader") as CharacterObject;
+                            factionsInvolved.Add(armyLeader?.HeroObject?.MapFaction);
+                        }
+                        else 
+                        {
+                            shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.ArmyDispersionFilterMode.SelectedIndex);
+                            isFilterOverriden = true;
+                        }
                     }
                     break;
                 case BattleStartedLogEntry battleStarted:
                     {
-                        var attackerFaction = GetLogEntryPrivateField(battleStarted, "_attackerFaction") as IFaction;
-                        factionsInvolved.Add(attackerFaction);
+                        if (IDontCareMenu.BattleStartedFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                        {
+                            var attackerFaction = GetLogEntryPrivateField(battleStarted, "_attackerFaction") as IFaction;
+                            factionsInvolved.Add(attackerFaction);
+                        }
+                        else
+                        {
+                            shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.BattleStartedFilterMode.SelectedIndex);
+                            isFilterOverriden = true;
+                        }
                     }
                     break;
                 case BesiegeSettlementLogEntry besiegeSettlement:
-                    factionsInvolved.Add(besiegeSettlement?.BesiegerFaction);
+                    if (IDontCareMenu.BesiegedSettlementFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(besiegeSettlement?.BesiegerFaction);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.BesiegedSettlementFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case ChangeCommonAreaOwnerLogEntry changeCommonAreaOwner:
-                    factionsInvolved.Add(changeCommonAreaOwner?.NewOwner?.MapFaction);
+                    if (IDontCareMenu.ChangeCommonAreaOwnerFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(changeCommonAreaOwner?.NewOwner?.MapFaction);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.ChangeCommonAreaOwnerFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case CharacterBornLogEntry characterBorn:
-                    factionsInvolved.Add(characterBorn?.BornCharacter?.MapFaction);
+                    if (IDontCareMenu.CharacterBornFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(characterBorn?.BornCharacter?.MapFaction);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.CharacterBornFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case CharacterInsultedLogEntry characterInsulted:
-                    factionsInvolved.Add(characterInsulted?.Insultee?.MapFaction);
-                    factionsInvolved.Add(characterInsulted?.Insulter?.MapFaction);
+                    if (IDontCareMenu.CharacterInsultedFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(characterInsulted?.Insultee?.MapFaction);
+                        factionsInvolved.Add(characterInsulted?.Insulter?.MapFaction);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.CharacterInsultedFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case CharacterKilledLogEntry characterKilled:
-                    factionsInvolved.Add(characterKilled?.Killer?.MapFaction);
-                    factionsInvolved.Add(characterKilled?.Victim?.MapFaction);
+                    if (IDontCareMenu.CharacterKilledFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(characterKilled?.Killer?.MapFaction);
+                        factionsInvolved.Add(characterKilled?.Victim?.MapFaction);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.CharacterKilledFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case CharacterMarriedLogEntry characterMarried:
-                    factionsInvolved.Add(characterMarried?.MarriedHero?.MapFaction);
-                    factionsInvolved.Add(characterMarried?.MarriedTo?.MapFaction);
+                    if (IDontCareMenu.CharacterMarriedFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(characterMarried?.MarriedHero?.MapFaction);
+                        factionsInvolved.Add(characterMarried?.MarriedTo?.MapFaction);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.CharacterMarriedFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case ChildbirthLogEntry childbirth:
-                    factionsInvolved.Add(childbirth?.Mother?.MapFaction);
+                    if (IDontCareMenu.ChildbirthFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(childbirth?.Mother?.MapFaction);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.ChildbirthFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case ClanChangeKingdomLogEntry clanChangeKingdom:
-                    factionsInvolved.Add(clanChangeKingdom?.OldKingdom);
-                    factionsInvolved.Add(clanChangeKingdom?.NewKingdom);
+                    if (IDontCareMenu.ClanChangeKingdomFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(clanChangeKingdom?.OldKingdom);
+                        factionsInvolved.Add(clanChangeKingdom?.NewKingdom);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.ClanChangeKingdomFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case DeclareWarLogEntry declareWar:
-                    factionsInvolved.Add(declareWar?.Faction1);
-                    factionsInvolved.Add(declareWar?.Faction2);
+                    if (IDontCareMenu.DeclareWarFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(declareWar?.Faction1);
+                        factionsInvolved.Add(declareWar?.Faction2);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.DeclareWarFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case EndCaptivityLogEntry endCaptivity:
-                    factionsInvolved.Add(endCaptivity?.CapturerMapFaction);
-                    factionsInvolved.Add(endCaptivity?.Prisoner?.MapFaction);
+                    if (IDontCareMenu.EndCaptivityFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(endCaptivity?.CapturerMapFaction);
+                        factionsInvolved.Add(endCaptivity?.Prisoner?.MapFaction);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.EndCaptivityFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case GatherArmyLogEntry gatherArmy:
-                    factionsInvolved.Add(gatherArmy?.ArmyMapFaction);
+                    if (IDontCareMenu.GatherArmyFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(gatherArmy?.ArmyMapFaction);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.GatherArmyFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case KingdomDecisionConcludedLogEntry kingdomDecisionConcluded:
-                    factionsInvolved.Add(kingdomDecisionConcluded?.Kingdom);
+                    if (IDontCareMenu.KingdomDecisionConcludedFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(kingdomDecisionConcluded?.Kingdom);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.KingdomDecisionConcludedFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case MakePeaceLogEntry makePeace:
-                    factionsInvolved.Add(makePeace?.Faction1);
-                    factionsInvolved.Add(makePeace?.Faction2);
+                    if (IDontCareMenu.MakePeaceFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(makePeace?.Faction1);
+                        factionsInvolved.Add(makePeace?.Faction2);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.MakePeaceFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case MercenaryClanChangedKingdomLogEntry mercenaryClanChangedKingdom:
-                    factionsInvolved.Add(mercenaryClanChangedKingdom?.OldKingdom);
-                    factionsInvolved.Add(mercenaryClanChangedKingdom?.NewKingdom);
+                    if (IDontCareMenu.MercenaryClanChangedKingdomFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(mercenaryClanChangedKingdom?.OldKingdom);
+                        factionsInvolved.Add(mercenaryClanChangedKingdom?.NewKingdom);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.MercenaryClanChangedKingdomFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case PregnancyLogEntry pregnancy:
-                    factionsInvolved.Add(pregnancy?.Mother?.MapFaction);
+                    if (IDontCareMenu.PregnancyFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(pregnancy?.Mother?.MapFaction);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.PregnancyFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case RebellionStartedLogEntry rebellionStarted:
-                    factionsInvolved.Add(rebellionStarted?.Settlement?.MapFaction);
+                    if (IDontCareMenu.RebellionStartedFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(rebellionStarted?.Settlement?.MapFaction);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.RebellionStartedFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case SettlementClaimedLogEntry settlementClaimed:
-                    factionsInvolved.Add(settlementClaimed?.Claimant?.MapFaction);
+                    if (IDontCareMenu.SettlementClaimedFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(settlementClaimed?.Claimant?.MapFaction);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.SettlementClaimedFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case TakePrisonerLogEntry takePrisoner:
-                    factionsInvolved.Add(takePrisoner?.CapturerHero?.MapFaction);
-                    factionsInvolved.Add(takePrisoner?.Prisoner?.MapFaction);
+                    if (IDontCareMenu.TakePrisonerFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(takePrisoner?.CapturerHero?.MapFaction);
+                        factionsInvolved.Add(takePrisoner?.Prisoner?.MapFaction);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.TakePrisonerFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 case TournamentWonLogEntry tournamentWon:
-                    factionsInvolved.Add(tournamentWon?.Town?.MapFaction);
-                    factionsInvolved.Add(tournamentWon?.Winner?.MapFaction);
-                    break;
-                case VillageStateChangedLogEntry villageStateChanged:
-                    factionsInvolved.Add(villageStateChanged?.RaiderPartyMapFaction);
-                    factionsInvolved.Add(villageStateChanged?.Village?.MarketTown?.MapFaction);
+                    if (IDontCareMenu.TournamentWonFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        factionsInvolved.Add(tournamentWon?.Town?.MapFaction);
+                        factionsInvolved.Add(tournamentWon?.Winner?.MapFaction);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.TournamentWonFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
                     break;
                 default:
                     break;
             }
 
-            shouldPlayerCare = IsAnyFactionAllyOrEnemyOfPlayer(factionsInvolved);
+            if (!isFilterOverriden)
+            {
+                shouldPlayerCare = IsAnyFactionAllyOrEnemyOfPlayer(factionsInvolved);
+            }
 
-            if (IsDebugLogging && !shouldPlayerCare)
+            if (IDontCareMenu.IsDebugMode && (!shouldPlayerCare || isFilterOverriden)) 
             {
                 DebugLog(logEntry);
             }
@@ -147,16 +310,19 @@ namespace IDontCare
             return shouldPlayerCare;
         }
 
-        private static bool CheckByImportanceShouldPlayerCare(LogEntry logEntry)
+        private static bool SwitchShouldPlayerCareDependingOnFilterMode(int filterModeSelectedIndex)
         {
-            var shouldPlayerCare = logEntry.GetImportanceForClan(Hero.MainHero.Clan) == PlayerCareImportanceLevel;
-
-            if (IsDebugLogging && !shouldPlayerCare)
+            if (filterModeSelectedIndex == IDontCareMenu.FILTERMODE_FILTER_ALL)
             {
-                DebugLog(logEntry);
+                return false;
+            }
+            if (filterModeSelectedIndex == IDontCareMenu.FILTERMODE_FILTER_NOTHING)
+            {
+                return true;
             }
 
-            return shouldPlayerCare;
+            // Shouldn't happen
+            return false;
         }
 
         private static void DebugLog(LogEntry logEntry)
