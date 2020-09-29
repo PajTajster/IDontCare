@@ -25,7 +25,7 @@ namespace IDontCare
         private static readonly DropdownDefault<string> FilterOptionsDefaultDropdown = new DropdownDefault<string>(
             new List<string> { "Default", "Filter all", "Filter Nothing" }, 0);
 
-        [SettingProperty("Enable/Disable mod", RequireRestart = false, HintText = "Enable or Disable this mod filter")]
+        [SettingProperty("Enable mod", RequireRestart = false, HintText = "Enable [ticked] or Disable [unticked]")]
         [SettingPropertyGroup("FilterEnabling", GroupOrder = 1)]
         public bool IsFilterEnabled { get; set; } = true;
 

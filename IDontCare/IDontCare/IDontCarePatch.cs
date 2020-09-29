@@ -20,7 +20,7 @@ namespace IDontCare
             bool shouldPlayerCare = false;
 
             // Only IChatNotification log entries are actually displayed to player. Rest are saved in history.
-            if (!(log is IChatNotification)) 
+            if (!(log is IChatNotification) || !IDontCareMenu.Instance.IsFilterEnabled) 
             {
                 return true;
             }
