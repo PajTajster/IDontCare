@@ -14,7 +14,7 @@ namespace IDontCare
         {
             base.OnSubModuleLoad();
 
-            var harmony = new Harmony("pajtajster.idontcare.patch");
+            var harmony = new Harmony("pajtajster.idontcare.campaignlogfilter.patch");
             harmony.PatchAll();
         }
 
