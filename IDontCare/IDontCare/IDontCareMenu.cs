@@ -16,7 +16,6 @@ namespace IDontCare
         public override string Id => "pajtajster.idontcare.campaignlogfilter.menu";
         public override string DisplayName => "I Don't Care";
         public override string FolderName => "IDontCareCampaignLogFilter";
-        public override string Format => "json";
         
         public static readonly int FILTERMODE_DEFAULT = 0;
         public static readonly int FILTERMODE_FILTER_ALL = 1;
