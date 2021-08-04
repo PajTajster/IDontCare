@@ -41,7 +41,7 @@ namespace IDontCare
         [SettingPropertyGroup("Filter Modes", GroupOrder = 0)]
         public DropdownDefault<string> BesiegedSettlementFilterMode { get; set; } = new DropdownDefault<string>(FilterOptionsDefaultDropdown, 0);
 
-        [SettingPropertyDropdown("Area Owner Change Entries", HintText = "It's related to changing in ownership of alleys in towns, dunno if it actually is used", RequireRestart = false)]
+        [SettingPropertyDropdown("Area Owner Change Entries", HintText = "It's related to changing in ownership of alleys in towns", RequireRestart = false)]
         [SettingPropertyGroup("Filter Modes", GroupOrder = 0)]
         public DropdownDefault<string> ChangeCommonAreaOwnerFilterMode { get; set; } = new DropdownDefault<string>(FilterOptionsDefaultDropdown, 0);
 
@@ -85,6 +85,10 @@ namespace IDontCare
         [SettingPropertyGroup("Filter Modes", GroupOrder = 0)]
         public DropdownDefault<string> KingdomDecisionConcludedFilterMode { get; set; } = new DropdownDefault<string>(FilterOptionsDefaultDropdown, 0);
 
+        [SettingPropertyDropdown("Kingdom Destroyed Entries", HintText = "Texts like '[kingdom] has been destroyed'", RequireRestart = false)]
+        [SettingPropertyGroup("Filter Modes", GroupOrder = 0)]
+        public DropdownDefault<string> KingdomDestroyedFilterMode { get; set; } = new DropdownDefault<string>(FilterOptionsDefaultDropdown, 0);
+
         [SettingPropertyDropdown("Kingdom Peace Entries", HintText = "Texts like '[some kingdom] made peace with [some other kingdom]'", RequireRestart = false)]
         [SettingPropertyGroup("Filter Modes", GroupOrder = 0)]
         public DropdownDefault<string> MakePeaceFilterMode { get; set; } = new DropdownDefault<string>(FilterOptionsDefaultDropdown, 0);
@@ -93,11 +97,15 @@ namespace IDontCare
         [SettingPropertyGroup("Filter Modes", GroupOrder = 0)]
         public DropdownDefault<string> MercenaryClanChangedKingdomFilterMode { get; set; } = new DropdownDefault<string>(FilterOptionsDefaultDropdown, 0);
 
+        [SettingPropertyDropdown("Battle End Entries", HintText = "Texts like '[some hero] has defeated [some other hero]'", RequireRestart = false)]
+        [SettingPropertyGroup("Filter Modes", GroupOrder = 0)]
+        public DropdownDefault<string> PlayerBattleEndedFilterMode { get; set; } = new DropdownDefault<string>(FilterOptionsDefaultDropdown, 0);
+
         [SettingPropertyDropdown("Pregnacy Entries", HintText = "Texts like '[some woman] is pregnant'", RequireRestart = false)]
         [SettingPropertyGroup("Filter Modes", GroupOrder = 0)]
         public DropdownDefault<string> PregnancyFilterMode { get; set; } = new DropdownDefault<string>(FilterOptionsDefaultDropdown, 0);
 
-        [SettingPropertyDropdown("Rebellion Entries", HintText = "It's for rebellions in settlement. It's not yet in the game", RequireRestart = false)]
+        [SettingPropertyDropdown("Rebellion Entries", HintText = "Texts like 'Rebels in [Settlement] have taken the ownership of the settlement.'", RequireRestart = false)]
         [SettingPropertyGroup("Filter Modes", GroupOrder = 0)]
         public DropdownDefault<string> RebellionStartedFilterMode { get; set; } = new DropdownDefault<string>(FilterOptionsDefaultDropdown, 0);
 

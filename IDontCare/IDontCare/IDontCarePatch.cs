@@ -216,6 +216,18 @@ namespace IDontCare
                         isFilterOverriden = true;
                     }
                     break;
+                case KingdomDestroyedLogEntry kingdomDestroyed:
+                    if (IDontCareMenu.Instance.KingdomDestroyedFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        var kingdom = GetLogEntryPrivateField(kingdomDestroyed, "_kingdom") as Kingdom;
+                        factionsInvolved.Add(kingdom?.MapFaction);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.Instance.KingdomDecisionConcludedFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
+                    break;
                 case MakePeaceLogEntry makePeace:
                     if (IDontCareMenu.Instance.MakePeaceFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
                     {
@@ -233,6 +245,21 @@ namespace IDontCare
                     {
                         factionsInvolved.Add(mercenaryClanChangedKingdom?.OldKingdom);
                         factionsInvolved.Add(mercenaryClanChangedKingdom?.NewKingdom);
+                    }
+                    else
+                    {
+                        shouldPlayerCare = SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.Instance.MercenaryClanChangedKingdomFilterMode.SelectedIndex);
+                        isFilterOverriden = true;
+                    }
+                    break;
+                case PlayerBattleEndedLogEntry playerBattleEnded:
+                    if (IDontCareMenu.Instance.PlayerBattleEndedFilterMode.SelectedIndex == IDontCareMenu.FILTERMODE_DEFAULT)
+                    {
+                        var winningSideHero = GetLogEntryPrivateField(playerBattleEnded, "_winnerSideHero") as Hero;
+                        var defeatedSideHero = GetLogEntryPrivateField(playerBattleEnded, "_defeatedSideHero") as Hero;
+
+                        factionsInvolved.Add(winningSideHero?.MapFaction);
+                        factionsInvolved.Add(defeatedSideHero?.MapFaction);
                     }
                     else
                     {
