@@ -365,11 +365,15 @@ namespace IDontCare
         // I know it's ugly to get privates, but I need them for filtering
         internal static object GetLogEntryPrivateField(object instance, string fieldName)
         {
-            var type = instance.GetType();
+            var type = instance?.GetType();
+            if (type is null)
+            {
+                return null;
+            }
 
             var bindFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static;
             var field = type.GetField(fieldName, bindFlags);
-            return field.GetValue(instance);
+            return field?.GetValue(instance);
         }
     }
 }
