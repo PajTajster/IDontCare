@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-  <Name value="I Don't Care"/>
+  <Name value="I Don't Care - Campaign Log Filter"/>
   <Id value="IDontCare"/>
-  <Version value="v2.1.0"/>
+  <Version value="v2.2.0"/>
   <SingleplayerModule value="true"/>
   <MultiplayerModule value="false"/>
   <DependedModules>
