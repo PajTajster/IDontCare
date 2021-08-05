@@ -6,7 +6,7 @@ using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
 using TaleWorlds.Core;
 
-namespace IDontCare
+namespace IDontCare.Patches
 {
     [HarmonyPatch(typeof(CampaignInformationManager))]
     [HarmonyPatch("AddLogEntry")]

@@ -307,7 +307,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LogEntriesPatch.cs" />
+    <Compile Include="Patches\LogEntriesPatch.cs" />
     <Compile Include="IDontCareMenu.cs" />
     <Compile Include="SubModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
