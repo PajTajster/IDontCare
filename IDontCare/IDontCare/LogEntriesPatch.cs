@@ -1,19 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 using HarmonyLib;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
 using TaleWorlds.Core;
-using TaleWorlds.Library;
 
 namespace IDontCare
 {
     [HarmonyPatch(typeof(CampaignInformationManager))]
     [HarmonyPatch("AddLogEntry")]
     [HarmonyPatch(new Type[] { typeof(LogEntry) })]
-    public static class IDontCarePatch
+    public static class LogEntriesPatch
     {
         public static bool Prefix(ref LogEntry log)
         {
