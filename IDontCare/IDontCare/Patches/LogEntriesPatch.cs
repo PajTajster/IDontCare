@@ -33,7 +33,7 @@ namespace IDontCare.Patches
             {
                 if (IDontCareMenu.Instance.IsDebugMode)
                 {
-                    FilteringHelper.DebugLog(log);
+                    FilteringHelper.DebugLog(log?.GetType()?.Name, InformationType.LogEntry);
                 }
                 return false;
             }
@@ -335,7 +335,7 @@ namespace IDontCare.Patches
 
             if (IDontCareMenu.Instance.IsDebugMode && (!shouldPlayerCare || isFilterOverriden)) 
             {
-                FilteringHelper.DebugLog(logEntry);
+                FilteringHelper.DebugLog(logEntry?.GetType()?.Name, InformationType.LogEntry);
             }
 
             return shouldPlayerCare;

@@ -50,9 +50,9 @@ namespace IDontCare.Helpers
             return false;
         }
 
-        public static void DebugLog(LogEntry logEntry)
+        public static void DebugLog(string typeName, InformationType informationType)
         {
-            InformationManager.DisplayMessage(new InformationMessage($"[I Don't Care DEBUG] Blocked message! Message type: {logEntry.GetType()?.Name}"));
+            InformationManager.DisplayMessage(new InformationMessage($"[I Don't Care DEBUG] Blocked message! Object name: {typeName}, type: {informationType}"));
         }
     }
 }
