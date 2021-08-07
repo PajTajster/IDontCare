@@ -330,48 +330,15 @@ namespace IDontCare.Patches
 
             if (!isFilterOverriden)
             {
-                shouldPlayerCare = IsAnyFactionAllyOrEnemyOfPlayer(factionsInvolved);
+                shouldPlayerCare = FilteringHelper.IsAnyFactionAllyOrEnemyOfPlayer(factionsInvolved);
             }
 
             if (IDontCareMenu.Instance.IsDebugMode && (!shouldPlayerCare || isFilterOverriden)) 
             {
-                DebugLog(logEntry);
+                FilteringHelper.DebugLog(logEntry);
             }
 
             return shouldPlayerCare;
-        }
-
-        private static void DebugLog(LogEntry logEntry)
-        {
-            InformationManager.DisplayMessage(new InformationMessage($"Blocked message! Message type: {logEntry.GetType()?.Name}"));
-        }
-
-        private static bool IsAnyFactionAllyOrEnemyOfPlayer(IList<IFaction> factions)
-        {
-            var playerFaction = Hero.MainHero.MapFaction;
-            foreach (var faction in factions)
-            {
-                if (faction is null)
-                {
-                    continue;
-                }
-
-                // Faction is treated as neutral to itself, e.g.: Vlandia to Vlandia stance is Neutral
-                if (playerFaction?.Name == faction?.Name)
-                {
-                    return true;
-                }
-                else
-                {
-                    var factionsStance = playerFaction.GetStanceWith(faction);
-                    if (factionsStance.IsAllied || factionsStance.IsAtWar)
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
         }
 
         // I know it's ugly to get privates, but I need them for filtering
