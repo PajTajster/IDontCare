@@ -119,7 +119,19 @@ namespace IDontCare
         [SettingPropertyDropdown("Tournament Won Entries", HintText = "Texts like '[somebody] has won the tournament at [some town]'", RequireRestart = false)]
         [SettingPropertyGroup(LogEntriesGroupName, GroupOrder = FilterGroupsGroupOrder)]
         public DropdownDefault<string> TournamentWonFilterMode { get; set; } = new DropdownDefault<string>(FilterOptionsDefaultDropdown, 0);
-#endregion
+        #endregion
+
+        #region Notifications
+
+        [SettingPropertyDropdown("Hero Levelled Up", HintText = "Texts like '[hero] gained a level'", RequireRestart = false)]
+        [SettingPropertyGroup(NotificationGroupName, GroupOrder = FilterGroupsGroupOrder)]
+        public DropdownDefault<string> OnHeroLevelledUpFilterMode { get; set; } = new DropdownDefault<string>(FilterOptionsDefaultDropdown, 0);
+
+        [SettingPropertyDropdown("Hero Gained Skill", HintText = "Texts like '[hero] gained [some] skill points etc..'", RequireRestart = false)]
+        [SettingPropertyGroup(NotificationGroupName, GroupOrder = FilterGroupsGroupOrder)]
+        public DropdownDefault<string> OnHeroGainedSkillFilterMode { get; set; } = new DropdownDefault<string>(FilterOptionsDefaultDropdown, 0);
+
+        #endregion
 
         [SettingProperty("Debug Logger", RequireRestart = false, HintText = "Enable or Disable debug messages")]
         [SettingPropertyGroup(DebugGroupName, GroupOrder = 2)]
