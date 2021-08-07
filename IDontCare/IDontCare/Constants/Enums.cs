@@ -4,7 +4,8 @@
     {
         Default = 0,
         FilterAll = 1,
-        FilterNothing = 2
+        FilterNothing = 2,
+        OnlyMe = 3
     }
 
     public enum InformationType : int

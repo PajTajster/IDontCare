@@ -22,8 +22,18 @@ namespace IDontCare.Patches
                 return true;
             }
 
-            var shouldPlayerCare = ShouldPlayerCare(IDontCareMenu.Instance.OnHeroLevelledUpFilterMode.SelectedIndex,
-                new List<IFaction>() { hero?.MapFaction });
+            var filterModeIndex = IDontCareMenu.Instance.OnHeroLevelledUpFilterMode.SelectedIndex;
+
+            bool shouldPlayerCare;
+            if (filterModeIndex == (int)FilterMode.OnlyMe)
+            {
+                shouldPlayerCare = hero == Hero.MainHero;
+            }
+            else
+            {
+                shouldPlayerCare = ShouldPlayerCare(IDontCareMenu.Instance.OnHeroLevelledUpFilterMode.SelectedIndex,
+                    new List<IFaction>() { hero?.MapFaction });
+            }
 
             if (!shouldPlayerCare)
             {
@@ -43,8 +53,18 @@ namespace IDontCare.Patches
                 return true;
             }
 
-            var shouldPlayerCare = ShouldPlayerCare(IDontCareMenu.Instance.OnHeroGainedSkillFilterMode.SelectedIndex,
-                new List<IFaction>() { hero?.MapFaction });
+            var filterModeIndex = IDontCareMenu.Instance.OnHeroGainedSkillFilterMode.SelectedIndex;
+
+            bool shouldPlayerCare;
+            if (filterModeIndex == (int)FilterMode.OnlyMe)
+            {
+                shouldPlayerCare = hero == Hero.MainHero;
+            }
+            else
+            {
+                shouldPlayerCare = ShouldPlayerCare(IDontCareMenu.Instance.OnHeroGainedSkillFilterMode.SelectedIndex,
+                    new List<IFaction>() { hero?.MapFaction });
+            }
 
             if (!shouldPlayerCare)
             {
