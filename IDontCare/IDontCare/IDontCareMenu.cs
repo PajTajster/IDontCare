@@ -1,4 +1,5 @@
-﻿using MCM.Abstractions.Attributes;
+﻿using IDontCare.Constants;
+using MCM.Abstractions.Attributes;
 using MCM.Abstractions.Attributes.v1;
 using MCM.Abstractions.Attributes.v2;
 using MCM.Abstractions.Dropdown;
@@ -18,12 +19,8 @@ namespace IDontCare
         public override string FolderName => "IDontCareCampaignLogFilter";
         public override string FormatType => "json";
 
-        public static readonly int FILTERMODE_DEFAULT = 0;
-        public static readonly int FILTERMODE_FILTER_ALL = 1;
-        public static readonly int FILTERMODE_FILTER_NOTHING = 2;
-
         private static readonly DropdownDefault<string> FilterOptionsDefaultDropdown = new DropdownDefault<string>(
-            new List<string> { "Default", "Filter all", "Filter Nothing" }, 0);
+            new List<string> { FilterMode.Default.ToString(), FilterMode.FilterAll.ToString(), FilterMode.FilterNothing.ToString()}, 0);
 
         [SettingProperty("Enable mod", RequireRestart = false, HintText = "Enable [ticked] or Disable [unticked]")]
         [SettingPropertyGroup("FilterEnabling", GroupOrder = 1)]

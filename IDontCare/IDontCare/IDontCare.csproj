@@ -307,8 +307,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\Enums.cs" />
+    <Compile Include="Helpers\FilteringHelper.cs" />
     <Compile Include="Patches\LogEntriesPatch.cs" />
     <Compile Include="IDontCareMenu.cs" />
+    <Compile Include="Patches\NotificationsPatch.cs" />
     <Compile Include="SubModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
