@@ -27,6 +27,7 @@ namespace IDontCare
         [SettingPropertyGroup("FilterEnabling", GroupOrder = 1)]
         public bool IsFilterEnabled { get; set; } = true;
 
+        #region LogEntries
         [SettingPropertyDropdown("Army Dispersion Entries", HintText = "Texts like '[some army] has been disbanded'", RequireRestart = false)]
         [SettingPropertyGroup(LogEntriesGroupName, GroupOrder = FilterGroupsGroupOrder)]
         public DropdownDefault<string> ArmyDispersionFilterMode { get; set; } = new DropdownDefault<string>(FilterOptionsDefaultDropdown, 0);
@@ -118,6 +119,7 @@ namespace IDontCare
         [SettingPropertyDropdown("Tournament Won Entries", HintText = "Texts like '[somebody] has won the tournament at [some town]'", RequireRestart = false)]
         [SettingPropertyGroup(LogEntriesGroupName, GroupOrder = FilterGroupsGroupOrder)]
         public DropdownDefault<string> TournamentWonFilterMode { get; set; } = new DropdownDefault<string>(FilterOptionsDefaultDropdown, 0);
+#endregion
 
         [SettingProperty("Debug Logger", RequireRestart = false, HintText = "Enable or Disable debug messages")]
         [SettingPropertyGroup(DebugGroupName, GroupOrder = 2)]
