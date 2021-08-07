@@ -25,7 +25,10 @@ namespace IDontCare.Patches
             var shouldPlayerCare = ShouldPlayerCare(IDontCareMenu.Instance.OnHeroLevelledUpFilterMode.SelectedIndex,
                 new List<IFaction>() { hero?.MapFaction });
 
-            DebugLogNotificationIfEnabled("OnHeroLevelledUp");
+            if (!shouldPlayerCare)
+            {
+                DebugLogNotificationIfEnabled("OnHeroLevelledUp");
+            }
 
             return shouldPlayerCare;
         }
@@ -43,7 +46,10 @@ namespace IDontCare.Patches
             var shouldPlayerCare = ShouldPlayerCare(IDontCareMenu.Instance.OnHeroGainedSkillFilterMode.SelectedIndex,
                 new List<IFaction>() { hero?.MapFaction });
 
-            DebugLogNotificationIfEnabled("OnHeroGainedSkill");
+            if (!shouldPlayerCare)
+            {
+                DebugLogNotificationIfEnabled("OnHeroLevelledUp");
+            }
 
             return shouldPlayerCare;
         }
