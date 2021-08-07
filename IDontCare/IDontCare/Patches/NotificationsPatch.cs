@@ -4,11 +4,12 @@ using HarmonyLib;
 using IDontCare.Constants;
 using IDontCare.Helpers;
 using TaleWorlds.CampaignSystem;
+using TaleWorlds.CampaignSystem.SandBox.CampaignBehaviors;
 using TaleWorlds.Core;
 
 namespace IDontCare.Patches
 {
-    [HarmonyPatch("DefaultNotificationsCampaignBehavior")]
+    [HarmonyPatch(typeof(DefaultNotificationsCampaignBehavior))]
     public static class NotificationsPatch
     {
         [HarmonyPrefix]
@@ -16,7 +17,7 @@ namespace IDontCare.Patches
         [HarmonyPatch(new Type[] { typeof(Hero), typeof(bool) })]
         public static bool OnHeroLevelledUpPrefix(Hero hero, bool shouldNotify)
         {
-            if (!shouldNotify)
+            if (!shouldNotify || !IDontCareMenu.Instance.IsFilterEnabled)
             {
                 return true;
             }
@@ -34,7 +35,7 @@ namespace IDontCare.Patches
         [HarmonyPatch(new Type[] { typeof(Hero), typeof(SkillObject), typeof(bool), typeof(int), typeof(bool) })]
         public static bool OnHeroGainedSkillPrefix(Hero hero, SkillObject skill, bool hasNewPerk, int change = 1, bool shouldNotify = true)
         {
-            if (!shouldNotify)
+            if (!shouldNotify || !IDontCareMenu.Instance.IsFilterEnabled)
             {
                 return true;
             }
