@@ -33,7 +33,7 @@ namespace IDontCare.Patches
             {
                 if (IDontCareMenu.Instance.IsDebugMode)
                 {
-                    DebugLog(log);
+                    FilteringHelper.DebugLog(log);
                 }
                 return false;
             }
