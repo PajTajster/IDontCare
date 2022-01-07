@@ -11,7 +11,7 @@ using TaleWorlds.Core;
 namespace IDontCare.Patches
 {
     [HarmonyPatch(typeof(CampaignInformationManager))]
-    [HarmonyPatch("AddLogEntry")]
+    [HarmonyPatch("NewLogEntryAdded")]
     [HarmonyPatch(new Type[] { typeof(LogEntry) })]
     public static class LogEntriesPatch
     {
