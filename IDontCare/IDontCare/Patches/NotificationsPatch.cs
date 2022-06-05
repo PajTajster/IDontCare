@@ -4,18 +4,17 @@ using HarmonyLib;
 using IDontCare.Constants;
 using IDontCare.Helpers;
 using TaleWorlds.CampaignSystem;
-using TaleWorlds.CampaignSystem.SandBox.CampaignBehaviors;
 using TaleWorlds.Core;
 
 namespace IDontCare.Patches
 {
-    [HarmonyPatch(typeof(DefaultNotificationsCampaignBehavior))]
+    [HarmonyPatch(typeof(CampaignEventReceiver))]
     public static class NotificationsPatch
     {
         [HarmonyPrefix]
         [HarmonyPatch("OnHeroLevelledUp")]
         [HarmonyPatch(new Type[] { typeof(Hero), typeof(bool) })]
-        public static bool OnHeroLevelledUpPrefix(Hero hero, bool shouldNotify)
+        public static bool OnHeroLevelledUpPrefix(Hero hero, ref bool shouldNotify)
         {
             if (!shouldNotify || !IDontCareMenu.Instance.IsFilterEnabled)
             {
@@ -40,13 +39,14 @@ namespace IDontCare.Patches
                 DebugLogNotificationIfEnabled("OnHeroLevelledUp");
             }
 
-            return shouldPlayerCare;
+            shouldNotify = shouldPlayerCare;
+            return true;
         }
 
         [HarmonyPrefix]
         [HarmonyPatch("OnHeroGainedSkill")]
         [HarmonyPatch(new Type[] { typeof(Hero), typeof(SkillObject), typeof(bool), typeof(int), typeof(bool) })]
-        public static bool OnHeroGainedSkillPrefix(Hero hero, SkillObject skill, bool hasNewPerk, int change = 1, bool shouldNotify = true)
+        public static bool OnHeroGainedSkillPrefix(Hero hero, SkillObject skill, bool hasNewPerk, int change, ref bool shouldNotify)
         {
             if (!shouldNotify || !IDontCareMenu.Instance.IsFilterEnabled)
             {
@@ -71,7 +71,8 @@ namespace IDontCare.Patches
                 DebugLogNotificationIfEnabled("OnHeroLevelledUp");
             }
 
-            return shouldPlayerCare;
+            shouldNotify = shouldPlayerCare;
+            return true;
         }
 
         private static bool ShouldPlayerCare(int filterModeIndex, List<IFaction> factionsInvolved)
