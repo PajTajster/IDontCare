@@ -1,7 +1,7 @@
 ﻿using IDontCare.Constants;
 using System.Collections.Generic;
 using TaleWorlds.CampaignSystem;
-using TaleWorlds.Core;
+using TaleWorlds.Library;
 
 namespace IDontCare.Helpers
 {
