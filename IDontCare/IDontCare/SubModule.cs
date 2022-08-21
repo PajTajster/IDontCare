@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using System.Reflection;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
@@ -14,7 +15,7 @@ namespace IDontCare
             base.OnSubModuleLoad();
 
             var harmony = new Harmony(IDC_PATCH_NAME);
-            harmony.PatchAll();
+            harmony.PatchAll(Assembly.GetExecutingAssembly());
         }
 
         public override void OnCampaignStart(Game game, object starterObject)
