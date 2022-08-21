@@ -22,29 +22,40 @@ namespace IDontCare.Helpers
             return false;
         }
 
+        public static bool IsFactionEnemyOrAllyOfPlayer(IFaction faction, IFaction playerFaction = null)
+        {
+            if (playerFaction is null)
+                playerFaction = Hero.MainHero.MapFaction;
+
+            if (faction is null)
+            {
+                return false;
+            }
+
+            // Faction is treated as neutral to itself, e.g.: Vlandia to Vlandia stance is Neutral
+            if (playerFaction?.Name == faction?.Name)
+            {
+                return true;
+            }
+            else
+            {
+                var factionsStance = playerFaction.GetStanceWith(faction);
+                if (factionsStance.IsAllied || factionsStance.IsAtWar)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public static bool IsAnyFactionAllyOrEnemyOfPlayer(IList<IFaction> factions)
         {
             var playerFaction = Hero.MainHero.MapFaction;
             foreach (var faction in factions)
             {
-                if (faction is null)
-                {
-                    continue;
-                }
-
-                // Faction is treated as neutral to itself, e.g.: Vlandia to Vlandia stance is Neutral
-                if (playerFaction?.Name == faction?.Name)
-                {
+                if (IsFactionEnemyOrAllyOfPlayer(faction, playerFaction))
                     return true;
-                }
-                else
-                {
-                    var factionsStance = playerFaction.GetStanceWith(faction);
-                    if (factionsStance.IsAllied || factionsStance.IsAtWar)
-                    {
-                        return true;
-                    }
-                }
             }
 
             return false;
