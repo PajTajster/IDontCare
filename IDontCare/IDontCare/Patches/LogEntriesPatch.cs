@@ -325,6 +325,8 @@ namespace IDontCare.Patches
                     }
                     break;
                 default:
+                    var eventImportance = logEntry.GetImportanceForClan(Clan.PlayerClan);
+                    shouldPlayerCare = eventImportance > ImportanceEnum.Important;
                     break;
             }
 
