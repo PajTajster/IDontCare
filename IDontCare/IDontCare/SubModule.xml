@@ -2,24 +2,26 @@
 <Module>
   <Name value="I Don't Care - Campaign Log Filter"/>
   <Id value="IDontCare"/>
-  <Version value="v2.3.0"/>
+  <Version value="v2.5.0"/>
   <SingleplayerModule value="true"/>
   <MultiplayerModule value="false"/>
   <Url value="https://www.nexusmods.com/mountandblade2bannerlord/mods/2175" />
   <DependedModules>
-    <DependedModule Id="Native" DependentVersion="e1.7.2"/>
-    <DependedModule Id="SandBoxCore" DependentVersion="e1.7.2"/>
-    <DependedModule Id="Sandbox" DependentVersion="e1.7.2"/>
-    <DependedModule Id="StoryMode" DependentVersion="e1.7.2"/>
+    <DependedModule Id="Native" DependentVersion="e1.8.0"/>
+    <DependedModule Id="SandBoxCore" DependentVersion="e1.8.0"/>
+    <DependedModule Id="Sandbox" DependentVersion="e1.8.0"/>
+    <DependedModule Id="StoryMode" DependentVersion="e1.8.0"/>
+    
+    <DependedModule Id="Bannerlord.MBOptionScreen" DependentVersion="v4.7.7"/>
   </DependedModules>
   <DependedModuleMetadatas>
     <DependedModuleMetadata id="Bannerlord.Harmony" order="LoadBeforeThis" version="v2.*" />
     <DependedModuleMetadata id="Bannerlord.MBOptionScreen" order="LoadBeforeThis" version="v4.*" />
 
-    <DependedModuleMetadata id="Native" order="LoadBeforeThis" version="e1.7.*" />
-    <DependedModuleMetadata id="SandBoxCore" order="LoadBeforeThis" version="e1.7.*" />
-    <DependedModuleMetadata id="Sandbox" order="LoadBeforeThis" version="e1.7.*" />
-    <DependedModuleMetadata id="StoryMode" order="LoadBeforeThis" version="e1.7.*" />
+    <DependedModuleMetadata id="Native" order="LoadBeforeThis" version="e1.8.*" />
+    <DependedModuleMetadata id="SandBoxCore" order="LoadBeforeThis" version="e1.8.*" />
+    <DependedModuleMetadata id="Sandbox" order="LoadBeforeThis" version="e1.8.*" />
+    <DependedModuleMetadata id="StoryMode" order="LoadBeforeThis" version="e1.8.*" />
   </DependedModuleMetadatas>
   <SubModules>
     <SubModule>
