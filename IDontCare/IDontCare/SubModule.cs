@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
 using System.Reflection;
-using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 
