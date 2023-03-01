@@ -45,10 +45,6 @@ namespace IDontCare
         [SettingPropertyGroup(LogEntriesGroupName, GroupOrder = FilterGroupsGroupOrder)]
         public Dropdown<string> BesiegedSettlementFilterMode { get; set; } = new Dropdown<string>(LogEntriesDefaultDropdownValues, 0);
 
-        [SettingPropertyDropdown("Area Owner Change Entries", HintText = "It's related to changing in ownership of alleys in towns", RequireRestart = false)]
-        [SettingPropertyGroup(LogEntriesGroupName, GroupOrder = FilterGroupsGroupOrder)]
-        public Dropdown<string> ChangeCommonAreaOwnerFilterMode { get; set; } = new Dropdown<string>(LogEntriesDefaultDropdownValues, 0);
-
         [SettingPropertyDropdown("Character Born Entries", HintText = "Texts like '[child] was born to [some lord]'", RequireRestart = false)]
         [SettingPropertyGroup(LogEntriesGroupName, GroupOrder = FilterGroupsGroupOrder)]
         public Dropdown<string> CharacterBornFilterMode { get; set; } = new Dropdown<string>(LogEntriesDefaultDropdownValues, 0);

@@ -89,17 +89,6 @@ namespace IDontCare.Patches
                         isFilterOverriden = true;
                     }
                     break;
-                case ChangeCommonAreaOwnerLogEntry changeCommonAreaOwner:
-                    if (IDontCareMenu.Instance.ChangeCommonAreaOwnerFilterMode.SelectedIndex == (int)FilterMode.Default)
-                    {
-                        factionsInvolved.Add(changeCommonAreaOwner?.NewOwner?.MapFaction);
-                    }
-                    else
-                    {
-                        shouldPlayerCare = FilteringHelper.SwitchShouldPlayerCareDependingOnFilterMode(IDontCareMenu.Instance.ChangeCommonAreaOwnerFilterMode.SelectedIndex);
-                        isFilterOverriden = true;
-                    }
-                    break;
                 case CharacterBornLogEntry characterBorn:
                     if (IDontCareMenu.Instance.CharacterBornFilterMode.SelectedIndex == (int)FilterMode.Default)
                     {
