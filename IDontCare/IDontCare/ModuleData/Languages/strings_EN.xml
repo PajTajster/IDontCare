@@ -5,7 +5,7 @@
  </tags>
  <strings>
   <string id="IDC.V000" text="Default"/>
-  <string id="IDC.V001" text="Filter ALl"/>
+  <string id="IDC.V001" text="Filter All"/>
   <string id="IDC.V002" text="Filter Nothing"/>
   <string id="IDC.G000" text="Log Entries Filter Modes"/>
   <string id="IDC.G001" text="Notifications Filter Modes"/>

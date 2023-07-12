@@ -1,5 +1,4 @@
-﻿using IDontCare.Constants;
-using MCM.Abstractions.Attributes;
+﻿using MCM.Abstractions.Attributes;
 using MCM.Abstractions.Attributes.v1;
 using MCM.Abstractions.Attributes.v2;
 using MCM.Abstractions.Base.Global;
@@ -15,20 +14,21 @@ namespace IDontCare
         public override string FolderName => "IDontCareCampaignLogFilter";
         public override string FormatType => "json";
 
-        public const string LogEntriesGroupName = "{=IDC.G000}Log Entries Filter Modes";
-        public const int FilterGroupsGroupOrder = 0;
-        public const string NotificationGroupName = "{=IDC.G001}Notifications Filter Modes";
-        public const string DebugGroupName = "{=IDC.G002}Debug";
-        public const string textDefault = "{=IDC.V000}Default";
-        public const string textFilterAll = "{=IDC.V001}Filter All";
-        public const string textFilterNothing = "{=IDC.V002}Filter Nothing";
+        private const string LogEntriesGroupName = "{=IDC.G000}Log Entries Filter Modes";
+        private const int FilterGroupsGroupOrder = 0;
+        private const string NotificationGroupName = "{=IDC.G001}Notifications Filter Modes";
+        
+        private const string DebugGroupName = "{=IDC.G002}Debug";
+        
+        private const string TextDefaultFilter = "{=IDC.V000}Default";
+        private const string TextFilterAll = "{=IDC.V001}Filter All";
+        private const string TextFilterNothing = "{=IDC.V002}Filter Nothing";
 
         private static readonly Dropdown<string> LogEntriesDefaultDropdownValues = new Dropdown<string>(
-            new List<string> { textDefault, textFilterAll, textFilterNothing}, 0);
+            new List<string> { TextDefaultFilter, TextFilterAll, TextFilterNothing}, 0);
 
         private static readonly Dropdown<string> NotificationsDefaultDropdownValues = new Dropdown<string>(
-            new List<string> { textDefault, textFilterAll, textFilterNothing },
-            0);
+            new List<string> { TextDefaultFilter, TextFilterAll, TextFilterNothing }, 0);
 
         [SettingProperty("{=IDC.001}Enable mod", HintText = "{=IDC.001Hint}Enable [ticked] or Disable [unticked]", RequireRestart = false, Order = 0)]
         [SettingPropertyGroup("{=IDC.G003}FilterEnabling", GroupOrder = 1)]
