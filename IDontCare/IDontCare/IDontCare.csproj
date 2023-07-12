@@ -40,17 +40,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ModuleData\Languages\language_data.xml" />
+    <Content Include="ModuleData\Languages\strings_EN.xml" />
     <Content Include="SubModule.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Bannerlord.ButterLib">
-      <Version>2.8.1</Version>
+      <Version>2.8.10</Version>
       <IncludeAssets>build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
     <PackageReference Include="Bannerlord.MCM">
-      <Version>5.7.2</Version>
+      <Version>5.8.2</Version>
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -74,5 +76,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
     <Copy SourceFiles="SubModule.xml" DestinationFolder="$(OutDir)..\..\" />
+    <Copy SourceFiles="ModuleData\Languages\language_data.xml" DestinationFolder="$(OutDir)..\..\ModuleData\Languages" />
+    <Copy SourceFiles="ModuleData\Languages\strings_EN.xml" DestinationFolder="$(OutDir)..\..\ModuleData\Languages" />
   </Target>
 </Project>
