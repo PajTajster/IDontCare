@@ -1,7 +1,6 @@
 ﻿using System;
+using Filtering;
 using HarmonyLib;
-using IDontCare.Constants;
-using IDontCare.Helpers;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
 
@@ -20,11 +19,11 @@ namespace IDontCare.Patches
             {
                 return true;
             }
+
             var filterModeIndex = IDontCareMenu.Instance.OnHeroLevelledUpFilterMode.SelectedIndex; ;
 
-            shouldNotify = ShouldPlayerCare(hero,
-                                            filterModeIndex,
-                                            "OnHeroLevelledUp");
+            shouldNotify = FilteringMethods.ShouldPlayerCare(filterModeIndex, hero);
+
             return true;
         }
 
@@ -33,53 +32,16 @@ namespace IDontCare.Patches
         [HarmonyPatch(new Type[] { typeof(Hero), typeof(SkillObject), typeof(int), typeof(bool) })]
         public static bool OnHeroGainedSkillPrefix(Hero hero, SkillObject skill, int change, ref bool shouldNotify)
         {
-            if (!shouldNotify)
+            if (!shouldNotify || !IDontCareMenu.Instance.IsFilterEnabled)
             {
                 return true;
             }
 
             var filterModeIndex = IDontCareMenu.Instance.OnHeroGainedSkillFilterMode.SelectedIndex;
 
-            shouldNotify = ShouldPlayerCare(hero,
-                                            filterModeIndex,
-                                            "OnHeroGainedSkill");
+            shouldNotify = FilteringMethods.ShouldPlayerCare(filterModeIndex, hero);
+
             return true;
-        }
-
-        private static bool ShouldPlayerCare(Hero hero, int filterModeIndex, string debugMethodName)
-        {
-            if (!IDontCareMenu.Instance.IsFilterEnabled)
-            {
-                return true;
-            }
-
-            var filterMode = (FilterMode)filterModeIndex;
-
-            bool shouldPlayerCare;
-
-            switch (filterMode)
-            {
-                case FilterMode.FilterAll:
-                    shouldPlayerCare = false;
-                    break;
-                case FilterMode.FilterNothing:
-                    shouldPlayerCare = true;
-                    break;
-                case FilterMode.OnlyMe:
-                    shouldPlayerCare = hero == Hero.MainHero;
-                    break;
-                case FilterMode.Default:
-                default:
-                    shouldPlayerCare = FilteringHelper.IsFactionEnemyOrAllyOfPlayer(hero?.MapFaction);
-                    break;
-            }
-
-            if (IDontCareMenu.Instance.IsDebugMode && !shouldPlayerCare)
-            {
-                FilteringHelper.DebugLog(debugMethodName, InformationType.Notification);
-            }
-
-            return shouldPlayerCare;
         }
     }
 }

@@ -32,7 +32,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Enums.cs" />
-    <Compile Include="Helpers\FilteringHelper.cs" />
+    <Compile Include="Extensions\IFactionExtensions.cs" />
+    <Compile Include="Filtering\FilteringMethods.cs" />
+    <Compile Include="Filtering\LogEntries\ArmyDispersionLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\BattleStartedLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\BesiegeSettlementLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\CharacterBornLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\CharacterInsultedLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\CharacterKilledLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\CharacterMarriedLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\ChildbirthLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\ClanChangeKingdomLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\DeclareWarLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\EndCaptivityLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\FilteredLogBase.cs" />
+    <Compile Include="Filtering\LogEntries\GatherArmyLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\KingdomDecisionConcludedLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\KingdomDestroyedLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\LogFilteringAssignments.cs" />
+    <Compile Include="Filtering\LogEntries\MakePeaceLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\MercenaryClanChangedKingdomLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\PlayerBattleEndedLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\PregnancyLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\RebellionStartedLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\SettlementClaimedLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\TakePrisonerLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\TournamentWonLogEntryFiltered.cs" />
     <Compile Include="Patches\LogEntriesPatch.cs" />
     <Compile Include="IDontCareMenu.cs" />
     <Compile Include="Patches\NotificationPatches.cs" />
