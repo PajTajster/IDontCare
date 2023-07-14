@@ -4,13 +4,16 @@
   <tag language="English"/>
  </tags>
  <strings>
-  <string id="IDC.V000" text="Default"/>
+  <string id="IDC.V000" text="Default - anything related to my faction or factions im allied/at war with"/>
   <string id="IDC.V001" text="Filter All"/>
   <string id="IDC.V002" text="Filter Nothing"/>
+  <string id="IDC.V003" text="Filter Nothing"/>
+  <string id="IDC.V004" text="Filter Nothing"/>
+  <string id="IDC.V005" text="Filter Nothing"/>
   <string id="IDC.G000" text="Log Entries Filter Modes"/>
   <string id="IDC.G001" text="Notifications Filter Modes"/>
   <string id="IDC.G002" text="Debug"/>
-  <string id="IDC.G003" text="FilterEnabling"/>
+  <string id="IDC.G003" text="Global Settings"/>
   <string id="IDC.001" text="Enable mod"/>
   <string id="IDC.001Hint" text="Enable [ticked] or Disable [unticked]"/>
   <string id="IDC.002" text="Army Dispersion Entries"/>
@@ -47,7 +50,7 @@
   <string id="IDC.017Hint" text="Texts like '[some mercenaries] joined/left [some kingdom]'"/>
   <string id="IDC.018" text="Battle End Entries"/>
   <string id="IDC.018Hint" text="Texts like '[some hero] has defeated [some other hero]'"/>
-  <string id="IDC.019" text="Pregnacy Entries"/>
+  <string id="IDC.019" text="Pregnancy Entries"/>
   <string id="IDC.019Hint" text="Texts like '[some woman] is pregnant'"/>
   <string id="IDC.020" text="Rebellion Entries"/>
   <string id="IDC.020Hint" text="Texts like 'Rebels in [Settlement] have taken the ownership of the settlement.'"/>
@@ -65,5 +68,9 @@
   <string id="IDC.026Hint" text="Enable or Disable debug messages"/>
   <string id="IDC.027" text="Debug Filter Out Everything"/>
   <string id="IDC.027Hint" text="Enable or Disable filtering out every log"/>
+  <string id="IDC.028" text="Enable global override setting"/>
+  <string id="IDC.028Hint" text="Enable [ticked] or Disable [unticked]"/>
+  <string id="IDC.029" text="Enable mod"/>
+  <string id="IDC.029Hint" text="Enable [ticked] or Disable [unticked]"/>
  </strings>
 </base>
