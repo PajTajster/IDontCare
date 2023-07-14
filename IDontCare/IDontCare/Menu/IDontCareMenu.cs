@@ -1,8 +1,4 @@
-﻿using MCM.Abstractions.Attributes;
-using MCM.Abstractions.Attributes.v1;
-using MCM.Abstractions.Attributes.v2;
-using MCM.Abstractions.Base.Global;
-using MCM.Common;
+﻿using MCM.Abstractions.Base.Global;
 
 namespace Menu
 {
@@ -34,6 +30,5 @@ namespace Menu
 
         private static readonly string[] FilteringDefaultDropdownValues = 
             new string[] { TextDefaultFilter, TextFilterAll, TextFilterNothing, TextFilterOnlyMe, TextFilterMyClan, TextFilterOnlyMyKingdom };
-
     }
 }

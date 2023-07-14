@@ -6,7 +6,6 @@ namespace Menu
 {
     internal partial class IDontCareMenu
     {
-        #region LogEntries
         [SettingPropertyDropdown("{=IDC.002}Army Dispersion Entries", HintText = "{=IDC.002Hint}Texts like '[some army] has been disbanded'", RequireRestart = false, Order = 2)]
         [SettingPropertyGroup(LogEntriesGroupName, GroupOrder = LogEntriesGroupOrder)]
         public Dropdown<string> ArmyDispersionFilterMode { get; set; } = new Dropdown<string>(FilteringDefaultDropdownValues, 0);
@@ -94,6 +93,5 @@ namespace Menu
         [SettingPropertyDropdown("{=IDC.023}Tournament Won Entries", HintText = "{=IDC.023Hint}Texts like '[somebody] has won the tournament at [some town]'", RequireRestart = false, Order = 23)]
         [SettingPropertyGroup(LogEntriesGroupName, GroupOrder = LogEntriesGroupOrder)]
         public Dropdown<string> TournamentWonFilterMode { get; set; } = new Dropdown<string>(FilteringDefaultDropdownValues, 0);
-        #endregion
     }
 }
