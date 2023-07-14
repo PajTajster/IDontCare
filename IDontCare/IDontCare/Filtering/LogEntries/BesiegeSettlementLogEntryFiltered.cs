@@ -1,4 +1,4 @@
-﻿using IDontCare;
+﻿using Menu;
 using TaleWorlds.CampaignSystem.LogEntries;
 
 namespace Filtering.LogEntries

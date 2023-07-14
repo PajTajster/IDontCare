@@ -58,8 +58,11 @@
     <Compile Include="Filtering\LogEntries\SettlementClaimedLogEntryFiltered.cs" />
     <Compile Include="Filtering\LogEntries\TakePrisonerLogEntryFiltered.cs" />
     <Compile Include="Filtering\LogEntries\TournamentWonLogEntryFiltered.cs" />
+    <Compile Include="Menu\IDontCareMenu.Debug.cs" />
+    <Compile Include="Menu\IDontCareMenu.GlobalSettings.cs" />
+    <Compile Include="Menu\IDontCareMenu.LogEntries.cs" />
     <Compile Include="Patches\LogEntriesPatch.cs" />
-    <Compile Include="IDontCareMenu.cs" />
+    <Compile Include="Menu\IDontCareMenu.cs" />
     <Compile Include="Patches\NotificationPatches.cs" />
     <Compile Include="SubModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +100,9 @@
       <ExcludeAssets>runtime</ExcludeAssets>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Menu\IDontCareMenu.Notifications.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="CopyCustomContent" AfterTargets="AfterBuild">

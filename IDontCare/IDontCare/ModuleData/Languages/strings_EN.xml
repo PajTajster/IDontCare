@@ -72,7 +72,7 @@
     <string id="IDC.027Hint" text="Enable or Disable filtering out every log"/>
     <string id="IDC.028" text="Enable global override setting"/>
     <string id="IDC.028Hint" text="Enable [ticked] or Disable [unticked]"/>
-    <string id="IDC.029" text="Enable mod"/>
-    <string id="IDC.029Hint" text="Enable [ticked] or Disable [unticked]"/>
+    <string id="IDC.029" text="Global filter mode"/>
+    <string id="IDC.029Hint" text="All the settings will use this if global override is active"/>
   </strings>
 </base>
