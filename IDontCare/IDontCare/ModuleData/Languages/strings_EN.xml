@@ -7,13 +7,15 @@
     <string id="IDC.V000" text="Default - anything related to my faction or factions im allied/at war with"/>
     <string id="IDC.V001" text="Filter All"/>
     <string id="IDC.V002" text="Filter Nothing"/>
-    <string id="IDC.V003" text="Filter Nothing"/>
-    <string id="IDC.V004" text="Filter Nothing"/>
-    <string id="IDC.V005" text="Filter Nothing"/>
+    <string id="IDC.V003" text="Log entries only for my character"/>
+    <string id="IDC.V004" text="Log entries only for my clan"/>
+    <string id="IDC.V005" text="Log entries only for my kingdom"/>
+    
     <string id="IDC.G000" text="Log Entries Filter Modes"/>
     <string id="IDC.G001" text="Notifications Filter Modes"/>
     <string id="IDC.G002" text="Debug"/>
     <string id="IDC.G003" text="Global Settings"/>
+    
     <string id="IDC.001" text="Enable mod"/>
     <string id="IDC.001Hint" text="Enable [ticked] or Disable [unticked]"/>
     <string id="IDC.002" text="Army Dispersion Entries"/>
