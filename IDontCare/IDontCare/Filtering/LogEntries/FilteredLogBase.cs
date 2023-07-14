@@ -1,12 +1,9 @@
-﻿using Extensions;
-using IDontCare.Constants;
+﻿using IDontCare.Filtering;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
 
-namespace Filtering.LogEntries
+namespace IDontCare.Filtering.LogEntries
 {
     internal abstract class FilteredLogBase
     {

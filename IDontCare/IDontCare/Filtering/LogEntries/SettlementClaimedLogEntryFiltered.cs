@@ -1,8 +1,8 @@
-﻿using Menu;
+﻿using IDontCare.Menu;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
 
-namespace Filtering.LogEntries
+namespace IDontCare.Filtering.LogEntries
 {
     internal class SettlementClaimedLogEntryFiltered : FilteredLogBase
     {

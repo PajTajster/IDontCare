@@ -1,12 +1,11 @@
-﻿using Extensions;
-using IDontCare.Constants;
+﻿using IDontCare.Constants;
+using IDontCare.Extensions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using TaleWorlds.CampaignSystem;
-using TaleWorlds.CampaignSystem.LogEntries;
 
-namespace Filtering
+namespace IDontCare.Filtering
 {
     internal static class FilteringMethods
     {

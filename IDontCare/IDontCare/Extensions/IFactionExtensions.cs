@@ -1,6 +1,6 @@
 ﻿using TaleWorlds.CampaignSystem;
 
-namespace Extensions
+namespace IDontCare.Extensions
 {
     internal static class IFactionExtensions
     {

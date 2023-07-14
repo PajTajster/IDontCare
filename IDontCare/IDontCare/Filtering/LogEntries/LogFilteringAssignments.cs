@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using TaleWorlds.CampaignSystem.LogEntries;
 
-namespace Filtering.LogEntries
+namespace IDontCare.Filtering.LogEntries
 {
     internal static class LogFilteringAssignments
     {

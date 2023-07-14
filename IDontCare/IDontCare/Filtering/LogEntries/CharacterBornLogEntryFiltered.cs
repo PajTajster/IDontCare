@@ -1,7 +1,7 @@
-﻿using Menu;
+﻿using IDontCare.Menu;
 using TaleWorlds.CampaignSystem.LogEntries;
 
-namespace Filtering.LogEntries
+namespace IDontCare.Filtering.LogEntries
 {
     internal class CharacterBornLogEntryFiltered : FilteredLogBase
     {

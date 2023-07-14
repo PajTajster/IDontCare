@@ -2,7 +2,7 @@
 using MCM.Abstractions.Attributes.v2;
 using MCM.Common;
 
-namespace Menu
+namespace IDontCare.Menu
 {
     internal partial class IDontCareMenu
     {

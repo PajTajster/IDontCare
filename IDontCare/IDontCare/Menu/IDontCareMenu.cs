@@ -1,6 +1,6 @@
 ﻿using MCM.Abstractions.Base.Global;
 
-namespace Menu
+namespace IDontCare.Menu
 {
     internal partial class IDontCareMenu : AttributeGlobalSettings<IDontCareMenu>
     {

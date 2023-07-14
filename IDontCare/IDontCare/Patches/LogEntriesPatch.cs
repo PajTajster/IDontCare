@@ -1,9 +1,9 @@
 ﻿using System;
-using Filtering.LogEntries;
 using HarmonyLib;
-using Menu;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
+using IDontCare.Menu;
+using IDontCare.Filtering.LogEntries;
 
 namespace IDontCare.Patches
 {
