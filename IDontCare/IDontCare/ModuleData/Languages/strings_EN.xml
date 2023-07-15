@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+  <tags>
+    <tag language="English"/>
+  </tags>
+  <strings>
+    <string id="IDC.V000" text="Default"/>
+    <string id="IDC.V001" text="Filter All"/>
+    <string id="IDC.V002" text="Filter Nothing"/>
+    <string id="IDC.V003" text="Log entries only for my character"/>
+    <string id="IDC.V004" text="Log entries only for my clan"/>
+    <string id="IDC.V005" text="Log entries only for my kingdom"/>
+    
+    <string id="IDC.G000" text="Log Entries Filter Modes"/>
+    <string id="IDC.G001" text="Notifications Filter Modes"/>
+    <string id="IDC.G002" text="Debug"/>
+    <string id="IDC.G003" text="Global Settings"/>
+    
+    <string id="IDC.001" text="Enable mod"/>
+    <string id="IDC.001Hint" text="Enable [ticked] or Disable [unticked]"/>
+    <string id="IDC.002" text="Army Dispersion Entries"/>
+    <string id="IDC.002Hint" text="Texts like '[some army] has been disbanded'"/>
+    <string id="IDC.003" text="Raiding Entries"/>
+    <string id="IDC.003Hint" text="Texts like '[some army] is raiding [some settlement]'"/>
+    <string id="IDC.004" text="Settlements Siege Entries"/>
+    <string id="IDC.004Hint" text="Texts like '[some town/castle] is besieged'"/>
+    <string id="IDC.005" text="Character Born Entries"/>
+    <string id="IDC.005Hint" text="Texts like '[child] was born to [some lord]'"/>
+    <string id="IDC.006" text="Lord's quarrel Entries"/>
+    <string id="IDC.006Hint" text="Something with lords insulting each other"/>
+    <string id="IDC.007" text="Death Entries"/>
+    <string id="IDC.007Hint" text="Texts like '[some guy] died of old age.' or '[some lord] was executed by [some other lord]'"/>
+    <string id="IDC.008" text="Marriage Entries"/>
+    <string id="IDC.008Hint" text="Texts like '[some character] married [some other character]'"/>
+    <string id="IDC.009" text="Child Birth Entries"/>
+    <string id="IDC.009Hint" text="Those texts are related to player's babies"/>
+    <string id="IDC.010" text="Clan Changing Kingdom Entries"/>
+    <string id="IDC.010Hint" text="Texts regarding Clans switching kingdoms"/>
+    <string id="IDC.011" text="War Declaration Entries"/>
+    <string id="IDC.011Hint" text="Texts like '[some kingdom] declared war on [some other kingdom]'"/>
+    <string id="IDC.012" text="End Captivity Entries"/>
+    <string id="IDC.012Hint" text="Any text regarding end of captivity, like paid ransom or escape"/>
+    <string id="IDC.013" text="Army Gathering Entries"/>
+    <string id="IDC.013Hint" text="Texts like '[some lord] gathers army at [somewhere]'"/>
+    <string id="IDC.014" text="Kingdom Concluded Decision Entries"/>
+    <string id="IDC.014Hint" text="Texts like '[faction] [has done something] with e.g.: major support'"/>
+    <string id="IDC.015" text="Kingdom Destroyed Entries"/>
+    <string id="IDC.015Hint" text="Texts like '[kingdom] has been destroyed'"/>
+    <string id="IDC.016" text="Kingdom Peace Entries"/>
+    <string id="IDC.016Hint" text="Texts like '[some kingdom] made peace with [some other kingdom]'"/>
+    <string id="IDC.017" text="Mercenary Clan Changed Kingdom Entries"/>
+    <string id="IDC.017Hint" text="Texts like '[some mercenaries] joined/left [some kingdom]'"/>
+    <string id="IDC.018" text="Battle End Entries"/>
+    <string id="IDC.018Hint" text="Texts like '[some hero] has defeated [some other hero]'"/>
+    <string id="IDC.019" text="Pregnancy Entries"/>
+    <string id="IDC.019Hint" text="Texts like '[some woman] is pregnant'"/>
+    <string id="IDC.020" text="Rebellion Entries"/>
+    <string id="IDC.020Hint" text="Texts like 'Rebels in [Settlement] have taken the ownership of the settlement.'"/>
+    <string id="IDC.021" text="Settlement Taken Entries"/>
+    <string id="IDC.021Hint" text="Texts like '[somebody] has claimed [some settlement} currently held by the [some faction]'"/>
+    <string id="IDC.022" text="Taken Prisoner Entries"/>
+    <string id="IDC.022Hint" text="Texts like '[somebody] has been taken prisoner by [someone else]'"/>
+    <string id="IDC.023" text="Tournament Won Entries"/>
+    <string id="IDC.023Hint" text="Texts like '[somebody] has won the tournament at [some town]'"/>
+    <string id="IDC.024" text="Hero Levelled Up"/>
+    <string id="IDC.024Hint" text="Texts like '[hero] gained a level'"/>
+    <string id="IDC.025" text="Hero Gained Skill"/>
+    <string id="IDC.025Hint" text="Texts like '[hero] gained [some] skill points etc..'"/>
+    <string id="IDC.026" text="Debug Logger"/>
+    <string id="IDC.026Hint" text="Enable or Disable debug messages"/>
+    <string id="IDC.027" text="Debug Filter Out Everything"/>
+    <string id="IDC.027Hint" text="Enable or Disable filtering out every log"/>
+    <string id="IDC.028" text="Enable global override setting"/>
+    <string id="IDC.028Hint" text="Enable [ticked] or Disable [unticked]"/>
+    <string id="IDC.029" text="Global filter mode"/>
+    <string id="IDC.029Hint" text="All the settings will use this if global override is active"/>
+  </strings>
+</base>

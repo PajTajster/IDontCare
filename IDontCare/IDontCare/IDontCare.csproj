@@ -17,6 +17,9 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>IDontCare</RootNamespace>
+  </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <ItemGroup>
     <Reference Include="System" />
@@ -32,25 +35,56 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Enums.cs" />
-    <Compile Include="Helpers\FilteringHelper.cs" />
+    <Compile Include="Extensions\DropdownExtensions.cs" />
+    <Compile Include="Extensions\IFactionExtensions.cs" />
+    <Compile Include="Filtering\FilteringMethods.cs" />
+    <Compile Include="Filtering\LogEntries\ArmyDispersionLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\BattleStartedLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\BesiegeSettlementLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\CharacterBornLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\CharacterInsultedLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\CharacterKilledLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\CharacterMarriedLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\ChildbirthLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\ClanChangeKingdomLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\DeclareWarLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\EndCaptivityLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\ILogEntryFilter.cs" />
+    <Compile Include="Filtering\LogEntries\GatherArmyLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\KingdomDecisionConcludedLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\KingdomDestroyedLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\LogFilteringAssignments.cs" />
+    <Compile Include="Filtering\LogEntries\MakePeaceLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\MercenaryClanChangedKingdomLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\PlayerBattleEndedLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\PregnancyLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\RebellionStartedLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\SettlementClaimedLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\TakePrisonerLogEntryFiltered.cs" />
+    <Compile Include="Filtering\LogEntries\TournamentWonLogEntryFiltered.cs" />
+    <Compile Include="Menu\IDontCareMenu.Debug.cs" />
+    <Compile Include="Menu\IDontCareMenu.GlobalSettings.cs" />
+    <Compile Include="Menu\IDontCareMenu.LogEntries.cs" />
     <Compile Include="Patches\LogEntriesPatch.cs" />
-    <Compile Include="IDontCareMenu.cs" />
+    <Compile Include="Menu\IDontCareMenu.cs" />
     <Compile Include="Patches\NotificationPatches.cs" />
     <Compile Include="SubModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ModuleData\Languages\language_data.xml" />
+    <Content Include="ModuleData\Languages\strings_EN.xml" />
     <Content Include="SubModule.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Bannerlord.ButterLib">
-      <Version>2.8.1</Version>
+      <Version>2.8.11</Version>
       <IncludeAssets>build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
     <PackageReference Include="Bannerlord.MCM">
-      <Version>5.7.2</Version>
+      <Version>5.8.4</Version>
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -71,8 +105,13 @@
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Menu\IDontCareMenu.Notifications.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
     <Copy SourceFiles="SubModule.xml" DestinationFolder="$(OutDir)..\..\" />
+    <Copy SourceFiles="ModuleData\Languages\language_data.xml" DestinationFolder="$(OutDir)..\..\ModuleData\Languages" />
+    <Copy SourceFiles="ModuleData\Languages\strings_EN.xml" DestinationFolder="$(OutDir)..\..\ModuleData\Languages" />
   </Target>
 </Project>
