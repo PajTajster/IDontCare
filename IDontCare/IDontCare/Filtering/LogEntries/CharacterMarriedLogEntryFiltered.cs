@@ -1,12 +1,13 @@
-﻿using IDontCare.Menu;
+﻿using IDontCare.Extensions;
+using IDontCare.Menu;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
 
 namespace IDontCare.Filtering.LogEntries
 {
-    internal class CharacterMarriedLogEntryFiltered : FilteredLogBase
+    internal class CharacterMarriedLogEntryFiltered : ILogEntryFilter
     {
-        public override bool ShouldPlayerCare(LogEntry logEntry)
+        public bool ShouldPlayerCare(LogEntry logEntry)
         {
             var characterMarriedLogEntry = logEntry as CharacterMarriedLogEntry;
 
@@ -14,8 +15,8 @@ namespace IDontCare.Filtering.LogEntries
             heroesInvolved[0] = characterMarriedLogEntry?.MarriedHero;
             heroesInvolved[1] = characterMarriedLogEntry?.MarriedTo;
 
-            return ShouldPlayerCare(IDontCareMenu.Instance.CharacterMarriedFilterMode.SelectedIndex,
-                                    heroesInvolved);
+            return FilteringMethods.ShouldPlayerCare(IDontCareMenu.Instance.CharacterMarriedFilterMode.GetFilterMode(),
+                                                     heroesInvolved);
         }
     }
 }

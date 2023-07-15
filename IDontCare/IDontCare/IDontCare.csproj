@@ -35,6 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Enums.cs" />
+    <Compile Include="Extensions\DropdownExtensions.cs" />
     <Compile Include="Extensions\IFactionExtensions.cs" />
     <Compile Include="Filtering\FilteringMethods.cs" />
     <Compile Include="Filtering\LogEntries\ArmyDispersionLogEntryFiltered.cs" />
@@ -48,7 +49,7 @@
     <Compile Include="Filtering\LogEntries\ClanChangeKingdomLogEntryFiltered.cs" />
     <Compile Include="Filtering\LogEntries\DeclareWarLogEntryFiltered.cs" />
     <Compile Include="Filtering\LogEntries\EndCaptivityLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\FilteredLogBase.cs" />
+    <Compile Include="Filtering\LogEntries\ILogEntryFilter.cs" />
     <Compile Include="Filtering\LogEntries\GatherArmyLogEntryFiltered.cs" />
     <Compile Include="Filtering\LogEntries\KingdomDecisionConcludedLogEntryFiltered.cs" />
     <Compile Include="Filtering\LogEntries\KingdomDestroyedLogEntryFiltered.cs" />

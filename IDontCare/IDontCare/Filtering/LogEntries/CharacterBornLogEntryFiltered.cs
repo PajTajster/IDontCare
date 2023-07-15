@@ -1,16 +1,17 @@
-﻿using IDontCare.Menu;
+﻿using IDontCare.Extensions;
+using IDontCare.Menu;
 using TaleWorlds.CampaignSystem.LogEntries;
 
 namespace IDontCare.Filtering.LogEntries
 {
-    internal class CharacterBornLogEntryFiltered : FilteredLogBase
+    internal class CharacterBornLogEntryFiltered : ILogEntryFilter
     {
-        public override bool ShouldPlayerCare(LogEntry logEntry)
+        public bool ShouldPlayerCare(LogEntry logEntry)
         {
             var characterBornLogEntry = logEntry as CharacterBornLogEntry;
 
-            return ShouldPlayerCare(IDontCareMenu.Instance.CharacterBornFilterMode.SelectedIndex,
-                                    characterBornLogEntry?.BornCharacter);
+            return FilteringMethods.ShouldPlayerCare(IDontCareMenu.Instance.CharacterBornFilterMode.GetFilterMode(),
+                                                     characterBornLogEntry?.BornCharacter);
         }
     }
 }

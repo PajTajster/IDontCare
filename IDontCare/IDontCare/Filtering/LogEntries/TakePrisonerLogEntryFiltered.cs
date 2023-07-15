@@ -1,12 +1,13 @@
-﻿using IDontCare.Menu;
+﻿using IDontCare.Extensions;
+using IDontCare.Menu;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
 
 namespace IDontCare.Filtering.LogEntries
 {
-    internal class TakePrisonerLogEntryFiltered : FilteredLogBase
+    internal class TakePrisonerLogEntryFiltered : ILogEntryFilter
     {
-        public override bool ShouldPlayerCare(LogEntry logEntry)
+        public bool ShouldPlayerCare(LogEntry logEntry)
         {
             var takePrisonerLogEntry = logEntry as TakePrisonerLogEntry;
 
@@ -14,8 +15,8 @@ namespace IDontCare.Filtering.LogEntries
             heroesInvolved[0] = takePrisonerLogEntry?.CapturerHero;
             heroesInvolved[1] = takePrisonerLogEntry?.Prisoner;
 
-            return ShouldPlayerCare(IDontCareMenu.Instance.TakePrisonerFilterMode.SelectedIndex,
-                                    heroesInvolved);
+            return FilteringMethods.ShouldPlayerCare(IDontCareMenu.Instance.TakePrisonerFilterMode.GetFilterMode(),
+                                                     heroesInvolved);
         }
     }
 }

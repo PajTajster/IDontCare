@@ -1,12 +1,13 @@
-﻿using IDontCare.Menu;
+﻿using IDontCare.Extensions;
+using IDontCare.Menu;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
 
 namespace IDontCare.Filtering.LogEntries
 {
-    internal class CharacterKilledLogEntryFiltered : FilteredLogBase
+    internal class CharacterKilledLogEntryFiltered : ILogEntryFilter
     {
-        public override bool ShouldPlayerCare(LogEntry logEntry)
+        public bool ShouldPlayerCare(LogEntry logEntry)
         {
             var characterKilledLogEntry = logEntry as CharacterKilledLogEntry;
 
@@ -14,8 +15,8 @@ namespace IDontCare.Filtering.LogEntries
             heroesInvolved[0] = characterKilledLogEntry?.Killer;
             heroesInvolved[1] = characterKilledLogEntry?.Victim;
 
-            return ShouldPlayerCare(IDontCareMenu.Instance.CharacterKilledFilterMode.SelectedIndex,
-                                    heroesInvolved);
+            return FilteringMethods.ShouldPlayerCare(IDontCareMenu.Instance.CharacterKilledFilterMode.GetFilterMode(),
+                                                     heroesInvolved);
         }
     }
 }

@@ -1,18 +1,20 @@
-﻿using IDontCare.Menu;
+﻿using IDontCare.Extensions;
+using IDontCare.Menu;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
 
 namespace IDontCare.Filtering.LogEntries
 {
-    internal class ArmyDispersionLogEntryFiltered : FilteredLogBase
+    internal class ArmyDispersionLogEntryFiltered : ILogEntryFilter
     {
-        public override bool ShouldPlayerCare(LogEntry logEntry)
+        public bool ShouldPlayerCare(LogEntry logEntry)
         {
             var armyDispersionLogEntry = logEntry as ArmyDispersionLogEntry;
             
-            var armyLeader = GetLogEntryPrivateField(armyDispersionLogEntry, "_armyLeader") as CharacterObject;
+            var armyLeader = FilteringMethods.GetLogEntryPrivateField(armyDispersionLogEntry, "_armyLeader") as CharacterObject;
 
-            return ShouldPlayerCare(IDontCareMenu.Instance.ArmyDispersionFilterMode.SelectedIndex, armyLeader?.HeroObject);
+            return FilteringMethods.ShouldPlayerCare(IDontCareMenu.Instance.ArmyDispersionFilterMode.GetFilterMode(),
+                                                     armyLeader?.HeroObject);
         }
     }
 }

@@ -1,12 +1,13 @@
-﻿using IDontCare.Menu;
+﻿using IDontCare.Extensions;
+using IDontCare.Menu;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
 
 namespace IDontCare.Filtering.LogEntries
 {
-    internal class MercenaryClanChangedKingdomLogEntryFiltered : FilteredLogBase
+    internal class MercenaryClanChangedKingdomLogEntryFiltered : ILogEntryFilter
     {
-        public override bool ShouldPlayerCare(LogEntry logEntry)
+        public bool ShouldPlayerCare(LogEntry logEntry)
         {
             var mercenaryClanChangedKingdomLogEntry = logEntry as MercenaryClanChangedKingdomLogEntry;
 
@@ -14,8 +15,8 @@ namespace IDontCare.Filtering.LogEntries
             factionsInvolved[0] = mercenaryClanChangedKingdomLogEntry?.OldKingdom;
             factionsInvolved[1] = mercenaryClanChangedKingdomLogEntry?.NewKingdom;
 
-            return ShouldPlayerCare(IDontCareMenu.Instance.MercenaryClanChangedKingdomFilterMode.SelectedIndex,
-                                    factionsInvolved);
+            return FilteringMethods.ShouldPlayerCare(IDontCareMenu.Instance.MercenaryClanChangedKingdomFilterMode.GetFilterMode(),
+                                                     factionsInvolved);
         }
     }
 }

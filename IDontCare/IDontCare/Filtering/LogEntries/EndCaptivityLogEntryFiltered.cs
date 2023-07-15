@@ -1,12 +1,13 @@
-﻿using IDontCare.Menu;
+﻿using IDontCare.Extensions;
+using IDontCare.Menu;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
 
 namespace IDontCare.Filtering.LogEntries
 {
-    internal class EndCaptivityLogEntryFiltered : FilteredLogBase
+    internal class EndCaptivityLogEntryFiltered : ILogEntryFilter
     {
-        public override bool ShouldPlayerCare(LogEntry logEntry)
+        public bool ShouldPlayerCare(LogEntry logEntry)
         {
             var endCaptivityLogEntry = logEntry as EndCaptivityLogEntry;
 
@@ -14,8 +15,8 @@ namespace IDontCare.Filtering.LogEntries
             factionsInvolved[0] = endCaptivityLogEntry?.CapturerMapFaction;
             factionsInvolved[1] = endCaptivityLogEntry?.Prisoner?.MapFaction;
 
-            return ShouldPlayerCare(IDontCareMenu.Instance.EndCaptivityFilterMode.SelectedIndex,
-                                    factionsInvolved);
+            return FilteringMethods.ShouldPlayerCare(IDontCareMenu.Instance.EndCaptivityFilterMode.GetFilterMode(),
+                                                     factionsInvolved);
         }
     }
 }

@@ -1,12 +1,13 @@
-﻿using IDontCare.Menu;
+﻿using IDontCare.Extensions;
+using IDontCare.Menu;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
 
 namespace IDontCare.Filtering.LogEntries
 {
-    internal class TournamentWonLogEntryFiltered : FilteredLogBase
+    internal class TournamentWonLogEntryFiltered : ILogEntryFilter
     {
-        public override bool ShouldPlayerCare(LogEntry logEntry)
+        public bool ShouldPlayerCare(LogEntry logEntry)
         {
             var tournamentWonLogEntry = logEntry as TournamentWonLogEntry;
 
@@ -14,8 +15,8 @@ namespace IDontCare.Filtering.LogEntries
             factionsInvolved[0] = tournamentWonLogEntry?.Town?.MapFaction;
             factionsInvolved[1] = tournamentWonLogEntry?.Winner?.MapFaction;
 
-            return ShouldPlayerCare(IDontCareMenu.Instance.TournamentWonFilterMode.SelectedIndex,
-                                    factionsInvolved);
+            return FilteringMethods.ShouldPlayerCare(IDontCareMenu.Instance.TournamentWonFilterMode.GetFilterMode(),
+                                                     factionsInvolved);
         }
     }
 }

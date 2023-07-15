@@ -5,7 +5,7 @@ namespace IDontCare.Filtering.LogEntries
 {
     internal static class LogFilteringAssignments
     {
-        internal static readonly Dictionary<string, FilteredLogBase> FilteringLogEntriesDict = new Dictionary<string, FilteredLogBase>()
+        internal static readonly Dictionary<string, ILogEntryFilter> FilteringLogEntriesDict = new Dictionary<string, ILogEntryFilter>()
         {
             { typeof(ArmyDispersionLogEntry).Name, new ArmyDispersionLogEntryFiltered() },
             { typeof(BattleStartedLogEntry).Name, new BattleStartedLogEntryFiltered() },

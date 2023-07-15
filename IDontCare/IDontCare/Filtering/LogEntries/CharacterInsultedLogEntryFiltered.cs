@@ -1,12 +1,13 @@
-﻿using IDontCare.Menu;
+﻿using IDontCare.Extensions;
+using IDontCare.Menu;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
 
 namespace IDontCare.Filtering.LogEntries
 {
-    internal class CharacterInsultedLogEntryFiltered : FilteredLogBase
+    internal class CharacterInsultedLogEntryFiltered : ILogEntryFilter
     {
-        public override bool ShouldPlayerCare(LogEntry logEntry)
+        public bool ShouldPlayerCare(LogEntry logEntry)
         {
             var characterInsultedLogEntry = logEntry as CharacterInsultedLogEntry;
 
@@ -14,8 +15,8 @@ namespace IDontCare.Filtering.LogEntries
             heroesInvolved[0] = characterInsultedLogEntry?.Insultee;
             heroesInvolved[1] = characterInsultedLogEntry?.Insulter;
 
-            return ShouldPlayerCare(IDontCareMenu.Instance.CharacterInsultedFilterMode.SelectedIndex,
-                                    heroesInvolved);
+            return FilteringMethods.ShouldPlayerCare(IDontCareMenu.Instance.CharacterInsultedFilterMode.GetFilterMode(),
+                                                     heroesInvolved);
         }
     }
 }

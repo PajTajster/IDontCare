@@ -1,12 +1,13 @@
-﻿using IDontCare.Menu;
+﻿using IDontCare.Extensions;
+using IDontCare.Menu;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
 
 namespace IDontCare.Filtering.LogEntries
 {
-    internal class ChildbirthLogEntryFiltered : FilteredLogBase
+    internal class ChildbirthLogEntryFiltered : ILogEntryFilter
     {
-        public override bool ShouldPlayerCare(LogEntry logEntry)
+        public bool ShouldPlayerCare(LogEntry logEntry)
         {
             var childbirthLogEntry = logEntry as ChildbirthLogEntry;
 
@@ -14,8 +15,8 @@ namespace IDontCare.Filtering.LogEntries
             heroesInvolved[0] = childbirthLogEntry?.Mother;
             heroesInvolved[1] = childbirthLogEntry?.NewbornHero;
 
-            return ShouldPlayerCare(IDontCareMenu.Instance.ChildbirthFilterMode.SelectedIndex,
-                                    heroesInvolved);
+            return FilteringMethods.ShouldPlayerCare(IDontCareMenu.Instance.ChildbirthFilterMode.GetFilterMode(),
+                                                     heroesInvolved);
         }
     }
 }

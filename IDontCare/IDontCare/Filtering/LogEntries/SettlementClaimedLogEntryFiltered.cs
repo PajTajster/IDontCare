@@ -1,12 +1,13 @@
-﻿using IDontCare.Menu;
+﻿using IDontCare.Extensions;
+using IDontCare.Menu;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
 
 namespace IDontCare.Filtering.LogEntries
 {
-    internal class SettlementClaimedLogEntryFiltered : FilteredLogBase
+    internal class SettlementClaimedLogEntryFiltered : ILogEntryFilter
     {
-        public override bool ShouldPlayerCare(LogEntry logEntry)
+        public bool ShouldPlayerCare(LogEntry logEntry)
         {
             var settlementClaimedLogEntry = logEntry as SettlementClaimedLogEntry;
 
@@ -14,8 +15,8 @@ namespace IDontCare.Filtering.LogEntries
             factionsInvolved[0] = settlementClaimedLogEntry?.Claimant?.MapFaction;
             factionsInvolved[1] = settlementClaimedLogEntry?.Settlement?.MapFaction;
 
-            return ShouldPlayerCare(IDontCareMenu.Instance.SettlementClaimedFilterMode.SelectedIndex,
-                                    factionsInvolved);
+            return FilteringMethods.ShouldPlayerCare(IDontCareMenu.Instance.SettlementClaimedFilterMode.GetFilterMode(),
+                                                     factionsInvolved);
         }
     }
 }

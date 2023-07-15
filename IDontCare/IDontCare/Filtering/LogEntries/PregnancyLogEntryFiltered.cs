@@ -1,16 +1,17 @@
-﻿using IDontCare.Menu;
+﻿using IDontCare.Extensions;
+using IDontCare.Menu;
 using TaleWorlds.CampaignSystem.LogEntries;
 
 namespace IDontCare.Filtering.LogEntries
 {
-    internal class PregnancyLogEntryFiltered : FilteredLogBase
+    internal class PregnancyLogEntryFiltered : ILogEntryFilter
     {
-        public override bool ShouldPlayerCare(LogEntry logEntry)
+        public bool ShouldPlayerCare(LogEntry logEntry)
         {
             var pregnancyLogEntry = logEntry as PregnancyLogEntry;
 
-            return ShouldPlayerCare(IDontCareMenu.Instance.PregnancyFilterMode.SelectedIndex,
-                                    pregnancyLogEntry?.Mother);
+            return FilteringMethods.ShouldPlayerCare(IDontCareMenu.Instance.PregnancyFilterMode.GetFilterMode(),
+                                                     pregnancyLogEntry?.Mother);
         }
     }
 }

@@ -1,16 +1,17 @@
-﻿using IDontCare.Menu;
+﻿using IDontCare.Extensions;
+using IDontCare.Menu;
 using TaleWorlds.CampaignSystem.LogEntries;
 
 namespace IDontCare.Filtering.LogEntries
 {
-    internal class GatherArmyLogEntryFiltered : FilteredLogBase
+    internal class GatherArmyLogEntryFiltered : ILogEntryFilter
     {
-        public override bool ShouldPlayerCare(LogEntry logEntry)
+        public bool ShouldPlayerCare(LogEntry logEntry)
         {
             var gatherArmyLogEntry = logEntry as GatherArmyLogEntry;
 
-            return ShouldPlayerCare(IDontCareMenu.Instance.GatherArmyFilterMode.SelectedIndex,
-                                    gatherArmyLogEntry?.ArmyMapFaction);
+            return FilteringMethods.ShouldPlayerCare(IDontCareMenu.Instance.GatherArmyFilterMode.GetFilterMode(),
+                                                     gatherArmyLogEntry?.ArmyMapFaction);
         }
     }
 }

@@ -1,12 +1,13 @@
-﻿using IDontCare.Menu;
+﻿using IDontCare.Extensions;
+using IDontCare.Menu;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
 
 namespace IDontCare.Filtering.LogEntries
 {
-    internal class MakePeaceLogEntryFiltered : FilteredLogBase
+    internal class MakePeaceLogEntryFiltered : ILogEntryFilter
     {
-        public override bool ShouldPlayerCare(LogEntry logEntry)
+        public bool ShouldPlayerCare(LogEntry logEntry)
         {
             var makePeaceLogEntry = logEntry as MakePeaceLogEntry;
 
@@ -14,8 +15,8 @@ namespace IDontCare.Filtering.LogEntries
             factionsInvolved[0] = makePeaceLogEntry?.Faction1;
             factionsInvolved[1] = makePeaceLogEntry?.Faction2;
 
-            return ShouldPlayerCare(IDontCareMenu.Instance.MakePeaceFilterMode.SelectedIndex,
-                                    factionsInvolved);
+            return FilteringMethods.ShouldPlayerCare(IDontCareMenu.Instance.MakePeaceFilterMode.GetFilterMode(),
+                                                     factionsInvolved);
         }
     }
 }

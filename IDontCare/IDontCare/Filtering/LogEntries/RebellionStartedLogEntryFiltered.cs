@@ -1,16 +1,17 @@
-﻿using IDontCare.Menu;
+﻿using IDontCare.Extensions;
+using IDontCare.Menu;
 using TaleWorlds.CampaignSystem.LogEntries;
 
 namespace IDontCare.Filtering.LogEntries
 {
-    internal class RebellionStartedLogEntryFiltered : FilteredLogBase
+    internal class RebellionStartedLogEntryFiltered : ILogEntryFilter
     {
-        public override bool ShouldPlayerCare(LogEntry logEntry)
+        public bool ShouldPlayerCare(LogEntry logEntry)
         {
             var rebellionStartedLogEntry = logEntry as RebellionStartedLogEntry;
 
-            return ShouldPlayerCare(IDontCareMenu.Instance.RebellionStartedFilterMode.SelectedIndex,
-                                rebellionStartedLogEntry?.Settlement?.MapFaction);
+            return FilteringMethods.ShouldPlayerCare(IDontCareMenu.Instance.RebellionStartedFilterMode.GetFilterMode(),
+                                                     rebellionStartedLogEntry?.Settlement?.MapFaction);
         }
     }
 }

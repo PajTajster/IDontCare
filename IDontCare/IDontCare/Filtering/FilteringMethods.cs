@@ -9,14 +9,14 @@ namespace IDontCare.Filtering
 {
     internal static class FilteringMethods
     {
-        internal static bool ShouldPlayerCare(int filterMode, IEnumerable<IFaction> factionsInvolved)
+        internal static bool ShouldPlayerCare(FilterMode filterMode, IEnumerable<IFaction> factionsInvolved)
             => factionsInvolved.Any(faction => ShouldPlayerCare(filterMode, faction));
 
-        internal static bool ShouldPlayerCare(int filterMode, IFaction factionInvolved)
+        internal static bool ShouldPlayerCare(FilterMode filterMode, IFaction factionInvolved)
         {
-            var shouldPlayerCare = false;
+            bool shouldPlayerCare;
 
-            switch ((FilterMode)filterMode)
+            switch (filterMode)
             {
                 case FilterMode.Default:
                     shouldPlayerCare = factionInvolved.IsAtWarOrAlliedWithPlayer();
@@ -43,14 +43,14 @@ namespace IDontCare.Filtering
             return shouldPlayerCare;
         }
 
-        internal static bool ShouldPlayerCare(int filterMode, IEnumerable<Hero> heroesInvolved)
+        internal static bool ShouldPlayerCare(FilterMode filterMode, IEnumerable<Hero> heroesInvolved)
             => heroesInvolved.Any(hero => ShouldPlayerCare(filterMode, hero));
 
-        internal static bool ShouldPlayerCare(int filterMode, Hero heroInvolved)
+        internal static bool ShouldPlayerCare(FilterMode filterMode, Hero heroInvolved)
         {
-            var shouldPlayerCare = false;
+            bool shouldPlayerCare;
 
-            switch ((FilterMode)filterMode)
+            switch (filterMode)
             {
                 case FilterMode.Default:
                     shouldPlayerCare = heroInvolved.MapFaction?.IsAtWarOrAlliedWithPlayer() ?? false;

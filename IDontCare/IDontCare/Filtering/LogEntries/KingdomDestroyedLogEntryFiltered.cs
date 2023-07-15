@@ -1,19 +1,20 @@
-﻿using IDontCare.Menu;
+﻿using IDontCare.Extensions;
+using IDontCare.Menu;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
 
 namespace IDontCare.Filtering.LogEntries
 {
-    internal class KingdomDestroyedLogEntryFiltered : FilteredLogBase
+    internal class KingdomDestroyedLogEntryFiltered : ILogEntryFilter
     {
-        public override bool ShouldPlayerCare(LogEntry logEntry)
+        public bool ShouldPlayerCare(LogEntry logEntry)
         {
             var kingdomDestroyedLogEntry = logEntry as KingdomDestroyedLogEntry;
 
-            var kingdom = GetLogEntryPrivateField(kingdomDestroyedLogEntry, "_kingdom") as Kingdom;
+            var kingdom = FilteringMethods.GetLogEntryPrivateField(kingdomDestroyedLogEntry, "_kingdom") as Kingdom;
 
-            return ShouldPlayerCare(IDontCareMenu.Instance.KingdomDestroyedFilterMode.SelectedIndex,
-                                    kingdom?.MapFaction);
+            return FilteringMethods.ShouldPlayerCare(IDontCareMenu.Instance.KingdomDestroyedFilterMode.GetFilterMode(),
+                                                     kingdom?.MapFaction);
         }
     }
 }
