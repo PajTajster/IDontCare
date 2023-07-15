@@ -4,6 +4,7 @@ using HarmonyLib;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
 using IDontCare.Menu;
+using IDontCare.Extensions;
 
 namespace IDontCare.Patches
 {
@@ -21,7 +22,7 @@ namespace IDontCare.Patches
                 return true;
             }
 
-            var filterModeIndex = IDontCareMenu.Instance.OnHeroLevelledUpFilterMode.SelectedIndex; ;
+            var filterModeIndex = IDontCareMenu.Instance.OnHeroLevelledUpFilterMode.GetFilterMode();
 
             shouldNotify = FilteringMethods.ShouldPlayerCare(filterModeIndex, hero);
 
@@ -38,7 +39,7 @@ namespace IDontCare.Patches
                 return true;
             }
 
-            var filterModeIndex = IDontCareMenu.Instance.OnHeroGainedSkillFilterMode.SelectedIndex;
+            var filterModeIndex = IDontCareMenu.Instance.OnHeroGainedSkillFilterMode.GetFilterMode();
 
             shouldNotify = FilteringMethods.ShouldPlayerCare(filterModeIndex, hero);
 
