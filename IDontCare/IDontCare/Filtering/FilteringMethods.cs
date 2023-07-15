@@ -14,6 +14,9 @@ namespace IDontCare.Filtering
 
         internal static bool ShouldPlayerCare(FilterMode filterMode, IFaction factionInvolved)
         {
+            if (factionInvolved is null)
+                return false;
+
             bool shouldPlayerCare;
 
             switch (filterMode)
@@ -48,6 +51,9 @@ namespace IDontCare.Filtering
 
         internal static bool ShouldPlayerCare(FilterMode filterMode, Hero heroInvolved)
         {
+            if (heroInvolved is null)
+                return false;
+
             bool shouldPlayerCare;
 
             switch (filterMode)
