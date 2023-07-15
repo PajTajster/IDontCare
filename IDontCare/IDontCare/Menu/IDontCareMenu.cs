@@ -21,7 +21,7 @@ namespace IDontCare.Menu
         private const string DebugGroupName = "{=IDC.G002}Debug";
         private const int DebugGroupOrder = 3;
 
-        private const string TextDefaultFilter = "{=IDC.V000}Default - anything related to my faction or factions im allied/at war with";
+        private const string TextDefaultFilter = "{=IDC.V000}Default";
         private const string TextFilterAll = "{=IDC.V001}Filter All";
         private const string TextFilterNothing = "{=IDC.V002}Filter Nothing";
         private const string TextFilterOnlyMe = "{=IDC.V003}Log entries only for my character";

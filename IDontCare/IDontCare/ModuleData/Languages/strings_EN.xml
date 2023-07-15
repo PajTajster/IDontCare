@@ -4,7 +4,7 @@
     <tag language="English"/>
   </tags>
   <strings>
-    <string id="IDC.V000" text="Default - anything related to my faction or factions im allied/at war with"/>
+    <string id="IDC.V000" text="Default"/>
     <string id="IDC.V001" text="Filter All"/>
     <string id="IDC.V002" text="Filter Nothing"/>
     <string id="IDC.V003" text="Log entries only for my character"/>
