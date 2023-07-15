@@ -16,8 +16,8 @@
     <DependedModule Id="Bannerlord.MBOptionScreen" DependentVersion="v5.8.4"/>
   </DependedModules>
   <DependedModuleMetadatas>
-    <DependedModuleMetadata id="Native" order="LoadAfterThis" version="v$gameversion$.*" />
-    <DependedModuleMetadata id="Bannerlord.MBOptionScreen" order="LoadAfterThis" version="v5.*" />
+    <DependedModuleMetadata id="Native" order="LoadBeforeThis" version="v$gameversion$.*" />
+    <DependedModuleMetadata id="Bannerlord.MBOptionScreen" order="LoadBeforeThis" version="v5.*" />
   </DependedModuleMetadatas>
   <SubModules>
     <SubModule>
