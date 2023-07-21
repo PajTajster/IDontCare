@@ -31,13 +31,15 @@ namespace IDontCare.Filtering
                     shouldPlayerCare = true;
                     break;
                 case FilterMode.OnlyMe:
-                    shouldPlayerCare = true;
+                    shouldPlayerCare = false;
                     break;
                 case FilterMode.OnlyMyClan:
-                    shouldPlayerCare = factionInvolved.IsClan && factionInvolved.Id == Hero.MainHero.Clan?.Id;
+                    shouldPlayerCare = factionInvolved.Id == Hero.MainHero.Clan?.Id;
                     break;
                 case FilterMode.OnlyMyKingdom:
-                    shouldPlayerCare = factionInvolved.Id == Hero.MainHero.Clan?.Kingdom?.Id;
+                    shouldPlayerCare = Hero.MainHero.Clan?.Kingdom is null
+                        ? factionInvolved.Id == Hero.MainHero.Clan?.Id
+                        : factionInvolved.Id == Hero.MainHero.Clan?.Kingdom?.Id;
                     break;
                 default:
                     return false;
@@ -74,7 +76,9 @@ namespace IDontCare.Filtering
                     shouldPlayerCare = heroInvolved.Clan?.Id == Hero.MainHero.Clan?.Id;
                     break;
                 case FilterMode.OnlyMyKingdom:
-                    shouldPlayerCare = heroInvolved.Clan?.Kingdom?.Id == Hero.MainHero.Clan?.Kingdom?.Id;
+                    shouldPlayerCare = Hero.MainHero.Clan?.Kingdom is null
+                        ? heroInvolved.Clan?.Id == Hero.MainHero.Clan?.Id
+                        : heroInvolved.Clan?.Kingdom?.Id == Hero.MainHero.Clan?.Kingdom?.Id;
                     break;
                 default:
                     return false;
