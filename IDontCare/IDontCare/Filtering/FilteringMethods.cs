@@ -31,7 +31,7 @@ namespace IDontCare.Filtering
                     shouldPlayerCare = true;
                     break;
                 case FilterMode.OnlyMe:
-                    shouldPlayerCare = true;
+                    shouldPlayerCare = false;
                     break;
                 case FilterMode.OnlyMyClan:
                     shouldPlayerCare = factionInvolved.IsClan && factionInvolved.Id == Hero.MainHero.Clan?.Id;
