@@ -37,6 +37,7 @@
     <Compile Include="Constants\Enums.cs" />
     <Compile Include="Extensions\DropdownExtensions.cs" />
     <Compile Include="Extensions\IFactionExtensions.cs" />
+    <Compile Include="Filtering\Debug.cs" />
     <Compile Include="Filtering\FilteringMethods.cs" />
     <Compile Include="Filtering\LogEntries\ArmyDispersionLogEntryFiltered.cs" />
     <Compile Include="Filtering\LogEntries\BattleStartedLogEntryFiltered.cs" />
@@ -78,19 +79,19 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Bannerlord.ButterLib">
-      <Version>2.8.11</Version>
+      <Version>2.8.15</Version>
       <IncludeAssets>build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
     <PackageReference Include="Bannerlord.MCM">
-      <Version>5.8.4</Version>
+      <Version>5.9.1</Version>
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Bannerlord.ReferenceAssemblies.Core">
-      <Version>1.1.5.21456</Version>
+      <Version>1.2.8.31530</Version>
     </PackageReference>
     <PackageReference Include="Bannerlord.UIExtenderEx">
       <Version>2.8.0</Version>

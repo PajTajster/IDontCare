@@ -4,6 +4,7 @@ using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.LogEntries;
 using IDontCare.Menu;
 using IDontCare.Filtering.LogEntries;
+using IDontCare.Filtering;
 
 namespace IDontCare.Patches
 {
@@ -39,6 +40,9 @@ namespace IDontCare.Patches
             }
 
             var shouldPlayerCare = logEntryFilter.ShouldPlayerCare(logEntry);
+
+            if (IDontCareMenu.Instance.IsDebugMode)
+                Debug.Log(shouldPlayerCare, logEntryTypeName, Constants.InformationType.LogEntry);
 
             return shouldPlayerCare;
         }
