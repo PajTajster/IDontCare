@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+ <tags>
+  <tag language="日本語"/>
+ </tags>
+ <strings>
+  <string id="IDC.V000" text="デフォルト"/>
+  <string id="IDC.V001" text="全てフィルタリング"/>
+  <string id="IDC.V002" text="フィルタリングしない"/>
+  <string id="IDC.V003" text="自分に関するログのみ"/>
+  <string id="IDC.V004" text="自分のクランに関するログのみ"/>
+  <string id="IDC.V005" text="自分の国に関するログのみ"/>
+
+  <string id="IDC.G000" text="ログ通知のモード"/>
+  <string id="IDC.G001" text="通知フィルタのモード"/>
+  <string id="IDC.G002" text="デバッグ"/>
+  <string id="IDC.G003" text="グローバル設定"/>
+
+  <string id="IDC.001" text="Mod有効"/>
+  <string id="IDC.001Hint" text="フィルタリングを有効にするか無効にするかを切り替えます"/>
+  <string id="IDC.002" text="軍隊の解散"/>
+  <string id="IDC.002Hint" text="「軍隊が解散した」のような報告"/>
+  <string id="IDC.003" text="略奪"/>
+  <string id="IDC.003Hint" text="「何それが何処かの村を略奪した」のような報告"/>
+  <string id="IDC.004" text="包囲"/>
+  <string id="IDC.004Hint" text="「都市・城が包囲された」のような報告"/>
+  <string id="IDC.005" text="出生"/>
+  <string id="IDC.005Hint" text="「誰それに子供が産まれた」のような報告"/>
+  <string id="IDC.006" text="領主の対立"/>
+  <string id="IDC.006Hint" text="領主どうしが互いを侮辱した話"/>
+  <string id="IDC.007" text="死亡"/>
+  <string id="IDC.007Hint" text="「誰それが老衰により死亡した」「誰それが処刑された」のような報告"/>
+  <string id="IDC.008" text="婚姻"/>
+  <string id="IDC.008Hint" text="「誰かが誰かと婚姻した」のような報告"/>
+  <string id="IDC.009" text="子供の誕生"/>
+  <string id="IDC.009Hint" text="プレイヤーの子供に関する報告"/>
+  <string id="IDC.010" text="領主を替えたクラン"/>
+  <string id="IDC.010Hint" text="クランが使える国を替えた報告"/>
+  <string id="IDC.011" text="宣戦布告"/>
+  <string id="IDC.011Hint" text="「どこそこの国がどこかの国に宣戦布告した」のような報告"/>
+  <string id="IDC.012" text="捕虜解放"/>
+  <string id="IDC.012Hint" text="身代金や脱走によって捕虜から解放された報告"/>
+  <string id="IDC.013" text="軍隊の結成"/>
+  <string id="IDC.013Hint" text="「領主の誰それがどこそこで軍隊を結成した」のような報告"/>
+  <string id="IDC.014" text="国の決定"/>
+  <string id="IDC.014Hint" text="「どこそこの勢力が賛成多数で何かをした」のような報告"/>
+  <string id="IDC.015" text="国の壊滅"/>
+  <string id="IDC.015Hint" text="「どこそこの国が滅亡した」のような報告"/>
+  <string id="IDC.016" text="国家間の和平"/>
+  <string id="IDC.016Hint" text="「どこそこの国があそこの国と和平を結んだ」のような報告"/>
+  <string id="IDC.017" text="傭兵クランの移籍"/>
+  <string id="IDC.017Hint" text="「どこそこの傭兵団がそこそこの国についた」のような報告"/>
+  <string id="IDC.018" text="戦闘終了"/>
+  <string id="IDC.018Hint" text="「誰それが誰かに敗北した」のような報告"/>
+  <string id="IDC.019" text="妊娠"/>
+  <string id="IDC.019Hint" text="「誰それが妊娠した」のような報告"/>
+  <string id="IDC.020" text="反乱"/>
+  <string id="IDC.020Hint" text="「どこそこの反乱軍がどこそこを占領した」のような報告"/>
+  <string id="IDC.021" text="集落の取得"/>
+  <string id="IDC.021Hint" text="「誰かがどこそこの勢力の領地のどこそこを要求した」のような報告"/>
+  <string id="IDC.022" text="捕虜"/>
+  <string id="IDC.022Hint" text="「誰それが誰かの捕虜になった」のような報告"/>
+  <string id="IDC.023" text="競技会の優勝"/>
+  <string id="IDC.023Hint" text="「誰それがどこかの都市の競技会で優勝した」のような報告"/>
+  <string id="IDC.024" text="ヒーローのレベルアップ"/>
+  <string id="IDC.024Hint" text="「誰それがレベルアップした」のような報告"/>
+  <string id="IDC.025" text="ヒーローのスキル上昇"/>
+  <string id="IDC.025Hint" text="「誰それのスキルポイントが…」のような報告"/>
+  <string id="IDC.026" text="デバッグロガー"/>
+  <string id="IDC.026Hint" text="デバッグメッセージの有効無効を切り替えます"/>
+  <string id="IDC.027" text="全て非表示"/>
+  <string id="IDC.027Hint" text="全てのログを非表示にするかどうかを切り替えます"/>
+  <string id="IDC.028" text="設定の全項目への上書きを有効"/>
+  <string id="IDC.028Hint" text="チェックすると有効になります"/>
+  <string id="IDC.029" text="全フィルタリングのモード選択"/>
+  <string id="IDC.029Hint" text="「設定の全項目への上書きを有効」にするとこの設定が全項目に適用されます。"/>
+ </strings>
+</base>
