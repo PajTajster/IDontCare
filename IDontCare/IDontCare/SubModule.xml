@@ -2,17 +2,17 @@
 <Module>
   <Name value="I Don't Care - Campaign Log Filter"/>
   <Id value="IDontCare"/>
-  <Version value="v2.6.3"/>
+  <Version value="v2.7.0"/>
   <SingleplayerModule value="true"/>
   <MultiplayerModule value="false"/>
   <ModuleCategory value="Singleplayer" />
   <ModuleType value="Community" />
   <Url value="https://www.nexusmods.com/mountandblade2bannerlord/mods/2175" />
   <DependedModules>
-    <DependedModule Id="Native" DependentVersion="v1.2.8"/>
-    <DependedModule Id="SandBoxCore" DependentVersion="v1.2.8"/>
-    <DependedModule Id="Sandbox" DependentVersion="v1.2.8"/>
-    <DependedModule Id="StoryMode" DependentVersion="v1.2.8"/>
+    <DependedModule Id="Native" DependentVersion="v1.2.9"/>
+    <DependedModule Id="SandBoxCore" DependentVersion="v1.2.9"/>
+    <DependedModule Id="Sandbox" DependentVersion="v1.2.9"/>
+    <DependedModule Id="StoryMode" DependentVersion="v1.2.9"/>
     <DependedModule Id="Bannerlord.MBOptionScreen" DependentVersion="v5.9.1"/>
   </DependedModules>
   <DependedModuleMetadatas>

@@ -18,8 +18,11 @@ namespace IDontCare.Menu
         private const string NotificationGroupName = "{=IDC.G001}Notifications Filter Modes";
         private const int NotificationsGroupOrder = 2;
 
+        private const string ModCompatibilityGroupName = "{=IDC.G004}Compatibility Mode";
+        private const int ModCompatibilityGroupOrder = 3;
+
         private const string DebugGroupName = "{=IDC.G002}Debug";
-        private const int DebugGroupOrder = 3;
+        private const int DebugGroupOrder = 100;
 
         private const string TextDefaultFilter = "{=IDC.V000}Default";
         private const string TextFilterAll = "{=IDC.V001}Filter All";

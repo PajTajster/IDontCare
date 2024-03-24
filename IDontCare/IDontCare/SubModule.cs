@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using IDontCare.Filtering.ModCompatibilites;
 using System.Reflection;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
@@ -15,6 +16,12 @@ namespace IDontCare
 
             var harmony = new Harmony(IDC_PATCH_NAME);
             harmony.PatchAll(Assembly.GetExecutingAssembly());
+        }
+
+        protected override void OnBeforeInitialModuleScreenSetAsRoot()
+        {
+            base.OnBeforeInitialModuleScreenSetAsRoot();
+            FilteredStrings.BuildFilteringStrings();
         }
 
         public override void OnCampaignStart(Game game, object starterObject)
