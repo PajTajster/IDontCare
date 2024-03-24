@@ -1,5 +1,5 @@
 ﻿using HarmonyLib;
-using IDontCare.Filtering.ModCompatibilites;
+using IDontCare.Filtering;
 using IDontCare.Menu;
 using System;
 using System.Linq;

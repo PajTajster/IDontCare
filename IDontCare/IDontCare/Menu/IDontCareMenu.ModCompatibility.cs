@@ -1,4 +1,4 @@
-﻿using IDontCare.Filtering.ModCompatibilites;
+﻿using IDontCare.Filtering;
 using MCM.Abstractions.Attributes;
 using MCM.Abstractions.Attributes.v2;
 using System;

@@ -63,7 +63,7 @@
     <Compile Include="Filtering\LogEntries\SettlementClaimedLogEntryFiltered.cs" />
     <Compile Include="Filtering\LogEntries\TakePrisonerLogEntryFiltered.cs" />
     <Compile Include="Filtering\LogEntries\TournamentWonLogEntryFiltered.cs" />
-    <Compile Include="Filtering\ModCompatibilites\FilteredStrings.cs" />
+    <Compile Include="Filtering\FilteredStrings.cs" />
     <Compile Include="Menu\IDontCareMenu.Debug.cs" />
     <Compile Include="Menu\IDontCareMenu.GlobalSettings.cs" />
     <Compile Include="Menu\IDontCareMenu.LogEntries.cs" />
@@ -112,6 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Menu\IDontCareMenu.Notifications.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Filtering\ModCompatibilites\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="CopyCustomContent" AfterTargets="AfterBuild">

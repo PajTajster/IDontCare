@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace IDontCare.Filtering.ModCompatibilites
+namespace IDontCare.Filtering
 {
     internal static class FilteredStrings
     {

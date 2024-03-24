@@ -1,5 +1,5 @@
 ﻿using HarmonyLib;
-using IDontCare.Filtering.ModCompatibilites;
+using IDontCare.Filtering;
 using System.Reflection;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
