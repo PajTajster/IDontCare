@@ -26,20 +26,20 @@ namespace IDontCare.Filtering.ModCompatibilites
 
         private static void UpdateFilteringStringsWithMenuFlags(ref HashSet<string> filteringStrings, ref IDontCareMenu menu)
         {
-            HandleModCompatibilityFlag(ref filteringStrings, menu.ServeAsSoldierLogHeroAdoptedChild, "{=FLT0000179}");
-            HandleModCompatibilityFlag(ref filteringStrings, menu.ServeAsSoldierLogHeroPromoted, "{=FLT0000000}");
-            HandleModCompatibilityFlag(ref filteringStrings, menu.ServeAsSoldierLogHeroRecruited, "{=FLT0000229}");
-            HandleModCompatibilityFlag(ref filteringStrings, menu.ServeAsSoldierLogHeroUnemployed, "{=FLT0000230}");
+            HandleModCompatibilityFlag(ref filteringStrings, menu.FilterServeAsSoldierHeroAdoptedChild, "{=FLT0000179}");
+            HandleModCompatibilityFlag(ref filteringStrings, menu.FilterServeAsSoldierHeroPromoted, "{=FLT0000000}");
+            HandleModCompatibilityFlag(ref filteringStrings, menu.FilterServeAsSoldierHeroRecruited, "{=FLT0000229}");
+            HandleModCompatibilityFlag(ref filteringStrings, menu.FilterServeAsSoldierHeroUnemployed, "{=FLT0000230}");
 
             filteringStrings = filteringStrings.Distinct().ToHashSet();
         }
 
-        private static void HandleModCompatibilityFlag(ref HashSet<string> filteringStrings, bool isEnabled, string filteredString)
+        private static void HandleModCompatibilityFlag(ref HashSet<string> filteringStrings, bool shouldFilter, string filteredString)
         {
-            if (isEnabled)
-                filteringStrings.Remove(filteredString);
-            else
+            if (shouldFilter)
                 filteringStrings.Add(filteredString);
+            else
+                filteringStrings.Remove(filteredString);
         }
     }
 }

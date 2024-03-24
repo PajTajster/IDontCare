@@ -82,13 +82,13 @@
     
     <string id="IDC.030" text="Refresh compatibility mode settings"/>
     <string id="IDC.030Hint" text="Those settings refresh at game start - you can click this to force refresh. Changes do not refresh UI-wise, you need to leave and enter to see them!"/>
-    <string id="IDC.031" text="Log Hero adopting child"/>
+    <string id="IDC.031" text="Filter Hero adopting child"/>
     <string id="IDC.031Hint" text="Text like '[Hero] adopted a child [Child]'"/>
-    <string id="IDC.032" text="Log Hero promoted"/>
+    <string id="IDC.032" text="Filter Hero promoted"/>
     <string id="IDC.032Hint" text="Text like '[Hero] has been promoted to tier [Tier]'"/>
-    <string id="IDC.033" text="Log Hero recruited by lord"/>
+    <string id="IDC.033" text="Filter Hero recruited by lord"/>
     <string id="IDC.033Hint" text="Text like '[Lord] recruited [Hero]'"/>
-    <string id="IDC.034" text="Log Hero no longer employeed"/>
+    <string id="IDC.034" text="Filter Hero no longer employeed"/>
     <string id="IDC.034Hint" text="Text like '[Hero] is no longer employeed by [Lord]'"/>
     <string id="IDC.035" text="Generic filter strings"/>
     <string id="IDC.035Hint" text="This is a list of localization Ids to be seeked out and filtered. Warning, this will filter out ALL instances of given translation! Usage: Type out string to search for separated by `;` symbol."/>
