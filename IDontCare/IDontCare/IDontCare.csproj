@@ -67,7 +67,6 @@
     <Compile Include="Menu\IDontCareMenu.Debug.cs" />
     <Compile Include="Menu\IDontCareMenu.GlobalSettings.cs" />
     <Compile Include="Menu\IDontCareMenu.LogEntries.cs" />
-    <Compile Include="Menu\IDontCareMenu.ModCompatibility.cs" />
     <Compile Include="Menu\IDontCareMenu.ModCompatibility.ServeAsSoldier.cs" />
     <Compile Include="Patches\LogEntriesPatch.cs" />
     <Compile Include="Menu\IDontCareMenu.cs" />
@@ -113,9 +112,7 @@
   <ItemGroup>
     <Compile Include="Menu\IDontCareMenu.Notifications.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Filtering\ModCompatibilites\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
     <Copy SourceFiles="SubModule.xml" DestinationFolder="$(OutDir)..\..\" />

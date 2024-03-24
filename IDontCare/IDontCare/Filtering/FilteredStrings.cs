@@ -31,6 +31,9 @@ namespace IDontCare.Filtering
             HandleModCompatibilityFlag(ref filteringStrings, menu.FilterServeAsSoldierHeroRecruited, "{=FLT0000229}");
             HandleModCompatibilityFlag(ref filteringStrings, menu.FilterServeAsSoldierHeroUnemployed, "{=FLT0000230}");
 
+            HandleModCompatibilityFlag(ref filteringStrings, menu.FilterNewPartUnlocked, "{=p9F90bc0}");
+            HandleModCompatibilityFlag(ref filteringStrings, menu.FilterRelationIncreased, "{=o0qwDa0q}");
+
             filteringStrings = filteringStrings.Distinct().ToHashSet();
         }
 

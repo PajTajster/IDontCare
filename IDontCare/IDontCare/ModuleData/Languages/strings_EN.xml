@@ -80,7 +80,7 @@
     <string id="IDC.029" text="Global filter mode"/>
     <string id="IDC.029Hint" text="All the settings will use this if global override is active"/>
     
-    <string id="IDC.030" text="Refresh compatibility mode settings"/>
+    <string id="IDC.030" text="Refresh Toggle filter settings"/>
     <string id="IDC.030Hint" text="Those settings refresh at game start - you can click this to force refresh. Changes do not refresh UI-wise, you need to leave and enter to see them!"/>
     <string id="IDC.031" text="Filter Hero adopting child"/>
     <string id="IDC.031Hint" text="Text like '[Hero] adopted a child [Child]'"/>
@@ -92,5 +92,10 @@
     <string id="IDC.034Hint" text="Text like '[Hero] is no longer employeed by [Lord]'"/>
     <string id="IDC.035" text="Generic filter strings"/>
     <string id="IDC.035Hint" text="This is a list of localization Ids to be seeked out and filtered. Warning, this will filter out ALL instances of given translation! Usage: Type out string to search for separated by `;` symbol."/>
+
+    <string id="IDC.036" text="Filter new part unlocked"/>
+    <string id="IDC.036Hint" text="Text like 'New Smiting Part Unlocked: [Part] for [Weapon]'"/>
+    <string id="IDC.037" text="Filter notables relations"/>
+    <string id="IDC.037Hint" text="Text like 'Your relation increased by [relation] with nearby notables'"/>
   </strings>
 </base>
