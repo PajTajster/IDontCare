@@ -21,6 +21,9 @@ namespace IDontCare.Menu
         private const string ModCompatibilityGroupName = "{=IDC.G004}Compatibility Mode";
         private const int ModCompatibilityGroupOrder = 3;
 
+        private const string AdvancedGroupName = "{=IDC.G002}Advanced";
+        private const int AdvancedGroupOrder = 99;
+
         private const string DebugGroupName = "{=IDC.G002}Debug";
         private const int DebugGroupOrder = 100;
 

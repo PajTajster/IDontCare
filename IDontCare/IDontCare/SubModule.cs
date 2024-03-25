@@ -21,7 +21,7 @@ namespace IDontCare
         protected override void OnBeforeInitialModuleScreenSetAsRoot()
         {
             base.OnBeforeInitialModuleScreenSetAsRoot();
-            FilteredStrings.BuildFilteringStrings();
+            AdvancedFiltering.Initialize();
         }
 
         public override void OnCampaignStart(Game game, object starterObject)

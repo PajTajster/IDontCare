@@ -63,8 +63,9 @@
     <Compile Include="Filtering\LogEntries\SettlementClaimedLogEntryFiltered.cs" />
     <Compile Include="Filtering\LogEntries\TakePrisonerLogEntryFiltered.cs" />
     <Compile Include="Filtering\LogEntries\TournamentWonLogEntryFiltered.cs" />
-    <Compile Include="Filtering\FilteredStrings.cs" />
+    <Compile Include="Filtering\AdvancedFiltering.cs" />
     <Compile Include="Menu\IDontCareMenu.Debug.cs" />
+    <Compile Include="Menu\IDontCareMenu.Advanced.cs" />
     <Compile Include="Menu\IDontCareMenu.GlobalSettings.cs" />
     <Compile Include="Menu\IDontCareMenu.LogEntries.cs" />
     <Compile Include="Menu\IDontCareMenu.ModCompatibility.ServeAsSoldier.cs" />

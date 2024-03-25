@@ -17,7 +17,7 @@ namespace IDontCare.Patches
         public static bool TextObjectToStringPrefix(TextObject __instance, ref string __result)
         {
             if ((IDontCareMenu.Instance?.IsFilterEnabled ?? false) &&
-                FilteredStrings.IdsToSearch.Any(x => __instance.Value.StartsWith(x, StringComparison.Ordinal)))
+                AdvancedFiltering.StringsToSearch.Any(x => __instance.Value.StartsWith(x, StringComparison.Ordinal)))
             {
                 __result = string.Empty;
                 return false;
@@ -36,7 +36,7 @@ namespace IDontCare.Patches
         public static bool MBInformationManagerAddQuickInformationPrefix(TextObject message, int extraTimeInMs = 0, BasicCharacterObject announcerCharacter = null, string soundEventPath = "")
         {
             if ((IDontCareMenu.Instance?.IsFilterEnabled ?? false) &&
-                FilteredStrings.IdsToSearch.Any(x => message.Value.StartsWith(x, StringComparison.Ordinal)))
+                AdvancedFiltering.StringsToSearch.Any(x => message.Value.StartsWith(x, StringComparison.Ordinal)))
             {
                 return false;
             }
