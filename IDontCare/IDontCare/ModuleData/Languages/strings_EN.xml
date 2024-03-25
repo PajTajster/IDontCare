@@ -14,7 +14,13 @@
     <string id="IDC.G000" text="Log Entries Filter Modes"/>
     <string id="IDC.G001" text="Notifications Filter Modes"/>
     <string id="IDC.G002" text="Debug"/>
-    <string id="IDC.G003" text="Global Settings"/>
+    <string id="IDC.G003" text="Global Settings"/>    
+    <string id="IDC.G004" text="Compatibility Mode"/>
+    <string id="IDC.G005" text="Advanced"/>
+
+    <string id="IDC.GS01" text="Serve As Soldier"/>
+    
+    <string id="IDC.Gen1" text="Refresh" />
     
     <string id="IDC.001" text="Enable mod"/>
     <string id="IDC.001Hint" text="Enable [ticked] or Disable [unticked]"/>
@@ -74,5 +80,27 @@
     <string id="IDC.028Hint" text="Enable [ticked] or Disable [unticked]"/>
     <string id="IDC.029" text="Global filter mode"/>
     <string id="IDC.029Hint" text="All the settings will use this if global override is active"/>
+    
+    <string id="IDC.030" text="Refresh generic filter settings"/>
+    <string id="IDC.030Hint" text="Those settings refresh at game start - you can click this to force refresh. Changes do not refresh UI-wise, you need to leave and enter to see them!"/>
+    <string id="IDC.031" text="Filter Hero adopting child"/>
+    <string id="IDC.031Hint" text="Text like '[Hero] adopted a child [Child]'"/>
+    <string id="IDC.032" text="Filter Hero promoted"/>
+    <string id="IDC.032Hint" text="Text like '[Hero] has been promoted to tier [Tier]'"/>
+    <string id="IDC.033" text="Filter Hero recruited by lord"/>
+    <string id="IDC.033Hint" text="Text like '[Lord] recruited [Hero]'"/>
+    <string id="IDC.034" text="Filter Hero no longer employeed"/>
+    <string id="IDC.034Hint" text="Text like '[Hero] is no longer employeed by [Lord]'"/>
+    <string id="IDC.035" text="Generic filter strings"/>
+    <string id="IDC.035Hint" text="This is a list of localization Ids to be seeked out and filtered. Warning, this will filter out ALL instances of given translation! Usage: Type out string to search for separated by `;` symbol."/>
+
+    <string id="IDC.036" text="Filter new part unlocked"/>
+    <string id="IDC.036Hint" text="Text like 'New Smiting Part Unlocked: [Part] for [Weapon]'"/>
+    <string id="IDC.037" text="Filter notables relations"/>
+    <string id="IDC.037Hint" text="Text like 'Your relation increased by [relation] with nearby notables'"/>
+    <string id="IDC.037" text="On Relation Change Positive"/>
+    <string id="IDC.037Hint" text="Relation changed notifications positive value. If new relation is in positive (0, 100) and lower or equal this value, show notification. Set to -1 to disable all positive relation notifications"/>
+    <string id="IDC.038" text="On Relation Change Negative"/>
+    <string id="IDC.038Hint" text="Relation changed notifications negative value. If new relation is in negative (-100, -1) and higher or equal this value, show notification. Set to 0 to disable all positive negative notifications'"/>
   </strings>
 </base>

@@ -9,7 +9,7 @@ namespace IDontCare.Menu
         public override string FolderName => "IDontCareCampaignLogFilter";
         public override string FormatType => "json";
 
-        private const string GlobalGroupName = "{=IDC.G000}Global Settings";
+        private const string GlobalGroupName = "{=IDC.G003}Global Settings";
         private const int GlobalGroupOrder = 0;
 
         private const string LogEntriesGroupName = "{=IDC.G000}Log Entries Filter Modes";
@@ -18,8 +18,14 @@ namespace IDontCare.Menu
         private const string NotificationGroupName = "{=IDC.G001}Notifications Filter Modes";
         private const int NotificationsGroupOrder = 2;
 
+        private const string ModCompatibilityGroupName = "{=IDC.G004}Compatibility Mode";
+        private const int ModCompatibilityGroupOrder = 3;
+
+        private const string AdvancedGroupName = "{=IDC.G002}Advanced";
+        private const int AdvancedGroupOrder = 99;
+
         private const string DebugGroupName = "{=IDC.G002}Debug";
-        private const int DebugGroupOrder = 3;
+        private const int DebugGroupOrder = 100;
 
         private const string TextDefaultFilter = "{=IDC.V000}Default";
         private const string TextFilterAll = "{=IDC.V001}Filter All";
