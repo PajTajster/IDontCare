@@ -9,10 +9,4 @@
         OnlyMyClan = 4,
         OnlyMyKingdom = 5
     }
-
-    public enum InformationType : int
-    {
-        LogEntry = 0,
-        Notification = 1
-    }
 }
