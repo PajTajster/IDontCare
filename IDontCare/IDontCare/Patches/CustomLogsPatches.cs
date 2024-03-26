@@ -16,8 +16,7 @@ namespace IDontCare.Patches
         [HarmonyPatch(typeof(TextObject), nameof(TextObject.ToString))]
         public static bool TextObjectToStringPrefix(TextObject __instance, ref string __result)
         {
-            if ((IDontCareMenu.Instance?.IsFilterEnabled ?? false) &&
-                AdvancedFiltering.StringsToSearch.Any(x => __instance.Value.StartsWith(x, StringComparison.Ordinal)))
+            if (TextObject.IsNullOrEmpty(__instance) || ShouldBeFilteredOut(__instance))
             {
                 __result = string.Empty;
                 return false;
@@ -35,13 +34,14 @@ namespace IDontCare.Patches
         [HarmonyPatch(typeof(MBInformationManager), nameof(MBInformationManager.AddQuickInformation))]
         public static bool MBInformationManagerAddQuickInformationPrefix(TextObject message, int extraTimeInMs = 0, BasicCharacterObject announcerCharacter = null, string soundEventPath = "")
         {
-            if ((IDontCareMenu.Instance?.IsFilterEnabled ?? false) &&
-                AdvancedFiltering.StringsToSearch.Any(x => message.Value.StartsWith(x, StringComparison.Ordinal)))
-            {
+            if (TextObject.IsNullOrEmpty(message) || ShouldBeFilteredOut(message))
                 return false;
-            }
 
             return true;
         }
+
+        private static bool ShouldBeFilteredOut(TextObject message)
+            => (IDontCareMenu.Instance?.IsFilterEnabled ?? false) &&
+                AdvancedFiltering.StringsToSearch.Any(x => message.Value.StartsWith(x, StringComparison.Ordinal));
     }
 }
