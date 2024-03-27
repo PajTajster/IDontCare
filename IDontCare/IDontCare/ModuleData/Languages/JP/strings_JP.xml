@@ -22,7 +22,7 @@
   <string id="IDC.Gen1" text="リフレッシュ"/>
 
   <string id="IDC.001" text="Mod有効"/>
-  <string id="IDC.001Hint" text="フィルタリングを有効にするか無効にするかを切り替えます"/>
+  <string id="IDC.001Hint" text="Modを有効にします"/>
   <string id="IDC.002" text="軍隊の解散"/>
   <string id="IDC.002Hint" text="「軍隊が解散した」のような報告"/>
   <string id="IDC.003" text="略奪"/>
@@ -90,7 +90,7 @@
   <string id="IDC.034" text="ヒーローの解雇"/>
   <string id="IDC.034Hint" text="「誰それとどこそこの国との雇用契約が満了した」のような報告"/>
   <string id="IDC.035" text="汎用フィルタの設定"/>
-  <string id="IDC.035Hint" text="このローカライゼーションIDの一覧は検出されるとフィルタリングされます。対応する訳文は入力は全て表示されなくなることに注意してください。セミコロン(;)で区切ってください。"/>
+  <string id="IDC.035Hint" text="このローカライゼーションIDの一覧は検出されるとフィルタリングされます。入力されたIDni対応する訳文は全て表示されなくなることに注意してください。セミコロン(;)で区切ってください。"/>
   <string id="IDC.036" text="新しい部品の解放"/>
   <string id="IDC.036Hint" text="「新しい鍛冶パーツが解放された」のような報告"/>
   <string id="IDC.037" text="有力者の好感"/>
