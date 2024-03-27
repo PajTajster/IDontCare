@@ -41,7 +41,8 @@ namespace IDontCare.Patches
         }
 
         private static bool ShouldBeFilteredOut(TextObject message)
-            => (IDontCareMenu.Instance?.IsFilterEnabled ?? false) &&
-                AdvancedFiltering.StringsToSearch.Any(x => message.Value.StartsWith(x, StringComparison.Ordinal));
+            => string.IsNullOrEmpty(message?.Value) || // Because for some reason TextObject.IsNullOrEmpty doesn't catch that
+               ((IDontCareMenu.Instance?.IsFilterEnabled ?? false) &&
+                AdvancedFiltering.StringsToSearch.Any(x => message.Value.StartsWith(x, StringComparison.Ordinal)));
     }
 }

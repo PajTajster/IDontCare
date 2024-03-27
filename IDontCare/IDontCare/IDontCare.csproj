@@ -120,5 +120,7 @@
     <Copy SourceFiles="SubModule.xml" DestinationFolder="$(OutDir)..\..\" />
     <Copy SourceFiles="ModuleData\Languages\language_data.xml" DestinationFolder="$(OutDir)..\..\ModuleData\Languages" />
     <Copy SourceFiles="ModuleData\Languages\strings_EN.xml" DestinationFolder="$(OutDir)..\..\ModuleData\Languages" />
+    <Copy SourceFiles="ModuleData\Languages\JP\language_data.xml" DestinationFolder="$(OutDir)..\..\ModuleData\Languages\JP" />
+    <Copy SourceFiles="ModuleData\Languages\JP\strings_JP.xml" DestinationFolder="$(OutDir)..\..\ModuleData\Languages\JP" />
   </Target>
 </Project>
