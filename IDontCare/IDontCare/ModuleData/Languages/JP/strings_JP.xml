@@ -12,9 +12,14 @@
   <string id="IDC.V005" text="自分の国に関するログのみ"/>
 
   <string id="IDC.G000" text="ログ通知のモード"/>
-  <string id="IDC.G001" text="通知フィルタのモード"/>
+  <string id="IDC.G001" text="通知フィルタリングのモード選択"/>
   <string id="IDC.G002" text="デバッグ"/>
   <string id="IDC.G003" text="グローバル設定"/>
+  <string id="IDC.G004" text="互換モード"/>
+  <string id="IDC.G005" text="上級者向け"/>
+
+  <string id="IDC.GS01" text="Serve As Soldier"/>
+  <string id="IDC.Gen1" text="リフレッシュ"/>
 
   <string id="IDC.001" text="Mod有効"/>
   <string id="IDC.001Hint" text="フィルタリングを有効にするか無効にするかを切り替えます"/>
@@ -74,5 +79,25 @@
   <string id="IDC.028Hint" text="チェックすると有効になります"/>
   <string id="IDC.029" text="全フィルタリングのモード選択"/>
   <string id="IDC.029Hint" text="「設定の全項目への上書きを有効」にするとこの設定が全項目に適用されます。"/>
+  <string id="IDC.030" text="汎用フィルタ設定のリフレッシュ"/>
+  <string id="IDC.030Hint" text="これらの設定はゲームの再起動後に適用されます。ここをクリックすると強制的に適用されます。全てのUIがリフレッシュされるとは限りません。一度消してから再度表示する必要があります。"/>
+  <string id="IDC.031" text="養子"/>
+  <string id="IDC.031Hint" text="「誰それが子供を養子にした」のような報告"/>
+  <string id="IDC.032" text="昇格"/>
+  <string id="IDC.032Hint" text="「誰それのTierが上昇した」のような報告"/>
+  <string id="IDC.033" text="領主の雇用"/>
+  <string id="IDC.033Hint" text="「領主が誰それを雇った」のような報告"/>
+  <string id="IDC.034" text="ヒーローの解雇"/>
+  <string id="IDC.034Hint" text="「誰それとどこそこの国との雇用契約が満了した」のような報告"/>
+  <string id="IDC.035" text="汎用フィルタの設定"/>
+  <string id="IDC.035Hint" text="このローカライゼーションIDの一覧は検出されるとフィルタリングされます。対応する訳文は入力は全て表示されなくなることに注意してください。セミコロン(;)で区切ってください。"/>
+  <string id="IDC.036" text="新しい部品の解放"/>
+  <string id="IDC.036Hint" text="「新しい鍛冶パーツが解放された」のような報告"/>
+  <string id="IDC.037" text="有力者の好感"/>
+  <string id="IDC.037Hint" text="「付近の有力者からの好感がどれくらい増加した」のような報告"/>
+  <string id="IDC.037" text="プラスの好感度"/>
+  <string id="IDC.037Hint" text="好感度がプラスになった場合の通知です。変化後の好感度が0から100の間で、かつこの値以下の場合に通知されます。-1を設定した場合は、好感度がプラスになった際の通知は発生しません。"/>
+  <string id="IDC.038" text="マイナスの好感度"/>
+  <string id="IDC.038Hint" text="好感度がマイナスになった場合の通知です。変化後の好感度が-100から-1の間で、かつこの値以上の場合に通知されます。0を設定した場合は、好感度がマイナスになった際の通知は発生しません。"/>
  </strings>
 </base>
