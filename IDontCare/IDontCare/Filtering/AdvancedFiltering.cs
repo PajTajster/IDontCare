@@ -48,9 +48,10 @@ namespace IDontCare.Filtering
         }
 
         private static HashSet<string> BuildFilteringStrings()
-            => IDontCareMenu.Instance
+            => IDontCareMenu.Instance? // how the fuck it manages to go null is beyond me 
                             .AdvancedFilteringStringsToFilter
                             .Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries)
-                            .ToHashSet();
+                            .ToHashSet()
+                ?? new HashSet<string>();
     }
 }
