@@ -102,5 +102,9 @@
     <string id="IDC.037Hint" text="Relation changed notifications positive value. If new relation is in positive (0, 100) and lower or equal this value, show notification. Set to -1 to disable all positive relation notifications"/>
     <string id="IDC.038" text="On Relation Change Negative"/>
     <string id="IDC.038Hint" text="Relation changed notifications negative value. If new relation is in negative (-100, -1) and higher or equal this value, show notification. Set to 0 to disable all positive negative notifications'"/>
+    <string id="IDC.039" text="Filter high security relation change"/>
+    <string id="IDC.039Hint" text="Notification when relation increases due to high security"/>
+    <string id="IDC.040" text="Filter high loyalty relation change"/>
+    <string id="IDC.040Hint" text="Notification when relation increases due to high loyalty"/>
   </strings>
 </base>

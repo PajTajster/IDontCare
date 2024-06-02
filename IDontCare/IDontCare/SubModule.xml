@@ -2,7 +2,7 @@
 <Module>
   <Name value="I Don't Care - Campaign Log Filter"/>
   <Id value="IDontCare"/>
-  <Version value="v2.7.2"/>
+  <Version value="v2.8.0"/>
   <SingleplayerModule value="true"/>
   <MultiplayerModule value="false"/>
   <ModuleCategory value="Singleplayer" />
@@ -13,7 +13,7 @@
     <DependedModule Id="SandBoxCore" DependentVersion="v1.2.9"/>
     <DependedModule Id="Sandbox" DependentVersion="v1.2.9"/>
     <DependedModule Id="StoryMode" DependentVersion="v1.2.9"/>
-    <DependedModule Id="Bannerlord.MBOptionScreen" DependentVersion="v5.9.2"/>
+    <DependedModule Id="Bannerlord.MBOptionScreen" DependentVersion="v5.10.1"/>
   </DependedModules>
   <DependedModuleMetadatas>
     <DependedModuleMetadata id="Native" order="LoadBeforeThis" version="v$gameversion$.*" />
