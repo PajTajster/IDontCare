@@ -78,25 +78,27 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ModuleData\Languages\JP\language_data.xml" />
+    <Content Include="ModuleData\Languages\JP\strings_JP.xml" />
     <Content Include="ModuleData\Languages\language_data.xml" />
     <Content Include="ModuleData\Languages\strings_EN.xml" />
     <Content Include="SubModule.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Bannerlord.ButterLib">
-      <Version>2.8.16</Version>
+      <Version>2.9.8</Version>
       <IncludeAssets>build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
     <PackageReference Include="Bannerlord.MCM">
-      <Version>5.9.2</Version>
+      <Version>5.10.1</Version>
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Bannerlord.ReferenceAssemblies.Core">
-      <Version>1.2.9.35636</Version>
+      <Version>1.2.9.38256</Version>
     </PackageReference>
     <PackageReference Include="Bannerlord.UIExtenderEx">
       <Version>2.11.0</Version>
@@ -105,7 +107,7 @@
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
     <PackageReference Include="Lib.Harmony">
-      <Version>2.3.1.1</Version>
+      <Version>2.3.3</Version>
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
