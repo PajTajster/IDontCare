@@ -28,15 +28,9 @@ namespace IDontCare.Menu
         }
         private bool _filterNewPartUnlocked = false;
 
-        [SettingPropertyInteger("{=IDC.037}On Relation Change Positive", -1, 100,
-                                HintText = "{=IDC.037Hint}Relation changed notifications positive value. " 
-                                           + "If new relation is in positive (0, 100) and lower or equal this value, show notification. "
-                                           + "Set to -1 to disable all positive relation notifications",
-                                RequireRestart = false, Order = 3)]
-        [SettingPropertyGroup(NotificationGroupName, GroupOrder = NotificationsGroupOrder)]
-        public int OnHeroRelationChangedFilterPositiveRelation { get; set; } = 100;
-
-        [SettingPropertyBool("{=IDC.037}Filter notables relations", HintText = "{=IDC.037Hint}Text like 'Your relation increased by [relation] with nearby notables'", RequireRestart = false, Order = 6)]
+        [SettingPropertyBool("{=IDC.037}Filter notables relations", 
+                             HintText = "{=IDC.037Hint}Text like 'Your relation increased by [relation] with nearby notables'", 
+                             RequireRestart = false, Order = 6)]
         [SettingPropertyGroup(NotificationGroupName, GroupOrder = NotificationsGroupOrder)]
         public bool FilterNotableRelationIncreased
         {
@@ -49,15 +43,23 @@ namespace IDontCare.Menu
         }
         private bool _filterRelationIncreased = false;
 
-        [SettingPropertyInteger("{=IDC.038}On Relation Change Negative", -100, 0,
-                                HintText = "{=IDC.038Hint}Relation changed notifications negative value. "
+        [SettingPropertyInteger("{=IDC.038}On Relation Change Positive", -1, 100,
+                                HintText = "{=IDC.038Hint}Relation changed notifications positive value. "
+                                           + "If new relation is in positive (0, 100) and lower or equal this value, show notification. "
+                                           + "Set to -1 to disable all positive relation notifications",
+                                RequireRestart = false, Order = 3)]
+        [SettingPropertyGroup(NotificationGroupName, GroupOrder = NotificationsGroupOrder)]
+        public int OnHeroRelationChangedFilterPositiveRelation { get; set; } = 100;
+
+        [SettingPropertyInteger("{=IDC.039}On Relation Change Negative", -100, 0,
+                                HintText = "{=IDC.039Hint}Relation changed notifications negative value. "
                                             + "If new relation is in negative (-100, -1) and higher or equal this value, show notification. "
                                             + "Set to 0 to disable all positive negative notifications'",
                                 RequireRestart = false, Order = 4)]
         [SettingPropertyGroup(NotificationGroupName, GroupOrder = NotificationsGroupOrder)]
         public int OnHeroRelationChangedFilterNegativeRelation { get; set; } = -100;
 
-        [SettingPropertyBool("{=IDC.039}Filter high security relation change", HintText = "{=IDC.039Hint}Notification when relation increases due to high security", RequireRestart = false, Order = 6)]
+        [SettingPropertyBool("{=IDC.040}Filter high security relation change", HintText = "{=IDC.040Hint}Notification when relation increases due to high security", RequireRestart = false, Order = 6)]
         [SettingPropertyGroup(NotificationGroupName, GroupOrder = NotificationsGroupOrder)]
         public bool FilterHighSecurityRelationChanged
         {
@@ -70,7 +72,7 @@ namespace IDontCare.Menu
         }
         private bool _filterHighSecurityRelationChanged = false;
 
-        [SettingPropertyBool("{=IDC.040}Filter high loyalty relation change", HintText = "{=IDC.040Hint}Notification when relation increases due to high loyalty", RequireRestart = false, Order = 6)]
+        [SettingPropertyBool("{=IDC.041}Filter high loyalty relation change", HintText = "{=IDC.041Hint}Notification when relation increases due to high loyalty", RequireRestart = false, Order = 6)]
         [SettingPropertyGroup(NotificationGroupName, GroupOrder = NotificationsGroupOrder)]
         public bool FilterHighLoyaltyRelationChanged
         {

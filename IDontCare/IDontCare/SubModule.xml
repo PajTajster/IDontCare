@@ -2,7 +2,7 @@
 <Module>
   <Name value="I Don't Care - Campaign Log Filter"/>
   <Id value="IDontCare"/>
-  <Version value="v2.8.0"/>
+  <Version value="v2.8.1"/>
   <SingleplayerModule value="true"/>
   <MultiplayerModule value="false"/>
   <ModuleCategory value="Singleplayer" />
