@@ -9,10 +9,10 @@ namespace IDontCare.Menu
         private const string ServeAsSoldierGroupName = ModCompatibilityGroupName + "\\" + "{=IDC.GS01}Serve As Soldier";
         private const int ServeAsSoldierGroupOrder = ModCompatibilityGroupOrder + 1;
 
-        private bool filterServeAsSoldierHeroAdoptedChild = true;
-        private bool filterServeAsSoldierHeroPromoted = true;
-        private bool filterServeAsSoldierHeroRecruited = true;
-        private bool filterServeAsSoldierHeroUnemployed = true;
+        private bool filterServeAsSoldierHeroAdoptedChild = false;
+        private bool filterServeAsSoldierHeroPromoted = false;
+        private bool filterServeAsSoldierHeroRecruited = false;
+        private bool filterServeAsSoldierHeroUnemployed = false;
 
         [SettingPropertyBool("{=IDC.031}Filter Hero adopting child", Order = 1, RequireRestart = false, HintText = "{=IDC.031Hint}Text like '[Hero] adopted a child [Child]'")]
         [SettingPropertyGroup(ServeAsSoldierGroupName, GroupOrder = ServeAsSoldierGroupOrder)]
