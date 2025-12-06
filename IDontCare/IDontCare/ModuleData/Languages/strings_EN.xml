@@ -1,110 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <base>
-  <tags>
-    <tag language="English"/>
-  </tags>
-  <strings>
-    <string id="IDC.V000" text="Default"/>
-    <string id="IDC.V001" text="Filter All"/>
-    <string id="IDC.V002" text="Filter Nothing"/>
-    <string id="IDC.V003" text="Log entries only for my character"/>
-    <string id="IDC.V004" text="Log entries only for my clan"/>
-    <string id="IDC.V005" text="Log entries only for my kingdom"/>
-    
-    <string id="IDC.G000" text="Log Entries Filter Modes"/>
-    <string id="IDC.G001" text="Notifications Filter Modes"/>
-    <string id="IDC.G002" text="Debug"/>
-    <string id="IDC.G003" text="Global Settings"/>    
-    <string id="IDC.G004" text="Compatibility Mode"/>
-    <string id="IDC.G005" text="Advanced"/>
+	<tags>
+		<tag language="English"/>
+	</tags>
+	<strings>
+		<string id="IDC.V000" text="Default"/>
+		<string id="IDC.V001" text="Filter All"/>
+		<string id="IDC.V002" text="Filter Nothing"/>
+		<string id="IDC.V003" text="Log entries only for my character"/>
+		<string id="IDC.V004" text="Log entries only for my clan"/>
+		<string id="IDC.V005" text="Log entries only for my kingdom"/>
 
-    <string id="IDC.GS01" text="Serve As Soldier"/>
-    
-    <string id="IDC.Gen1" text="Refresh" />
-    
-    <string id="IDC.001" text="Enable mod"/>
-    <string id="IDC.001Hint" text="Enable [ticked] or Disable [unticked]"/>
-    <string id="IDC.002" text="Army Dispersion Entries"/>
-    <string id="IDC.002Hint" text="Texts like '[some army] has been disbanded'"/>
-    <string id="IDC.003" text="Raiding Entries"/>
-    <string id="IDC.003Hint" text="Texts like '[some army] is raiding [some settlement]'"/>
-    <string id="IDC.004" text="Settlements Siege Entries"/>
-    <string id="IDC.004Hint" text="Texts like '[some town/castle] is besieged'"/>
-    <string id="IDC.005" text="Character Born Entries"/>
-    <string id="IDC.005Hint" text="Texts like '[child] was born to [some lord]'"/>
-    <string id="IDC.006" text="Lord's quarrel Entries"/>
-    <string id="IDC.006Hint" text="Something with lords insulting each other"/>
-    <string id="IDC.007" text="Death Entries"/>
-    <string id="IDC.007Hint" text="Texts like '[some guy] died of old age.' or '[some lord] was executed by [some other lord]'"/>
-    <string id="IDC.008" text="Marriage Entries"/>
-    <string id="IDC.008Hint" text="Texts like '[some character] married [some other character]'"/>
-    <string id="IDC.009" text="Child Birth Entries"/>
-    <string id="IDC.009Hint" text="Those texts are related to player's babies"/>
-    <string id="IDC.010" text="Clan Changing Kingdom Entries"/>
-    <string id="IDC.010Hint" text="Texts regarding Clans switching kingdoms"/>
-    <string id="IDC.011" text="War Declaration Entries"/>
-    <string id="IDC.011Hint" text="Texts like '[some kingdom] declared war on [some other kingdom]'"/>
-    <string id="IDC.012" text="End Captivity Entries"/>
-    <string id="IDC.012Hint" text="Any text regarding end of captivity, like paid ransom or escape"/>
-    <string id="IDC.013" text="Army Gathering Entries"/>
-    <string id="IDC.013Hint" text="Texts like '[some lord] gathers army at [somewhere]'"/>
-    <string id="IDC.014" text="Kingdom Concluded Decision Entries"/>
-    <string id="IDC.014Hint" text="Texts like '[faction] [has done something] with e.g.: major support'"/>
-    <string id="IDC.015" text="Kingdom Destroyed Entries"/>
-    <string id="IDC.015Hint" text="Texts like '[kingdom] has been destroyed'"/>
-    <string id="IDC.016" text="Kingdom Peace Entries"/>
-    <string id="IDC.016Hint" text="Texts like '[some kingdom] made peace with [some other kingdom]'"/>
-    <string id="IDC.017" text="Mercenary Clan Changed Kingdom Entries"/>
-    <string id="IDC.017Hint" text="Texts like '[some mercenaries] joined/left [some kingdom]'"/>
-    <string id="IDC.018" text="Battle End Entries"/>
-    <string id="IDC.018Hint" text="Texts like '[some hero] has defeated [some other hero]'"/>
-    <string id="IDC.019" text="Pregnancy Entries"/>
-    <string id="IDC.019Hint" text="Texts like '[some woman] is pregnant'"/>
-    <string id="IDC.020" text="Rebellion Entries"/>
-    <string id="IDC.020Hint" text="Texts like 'Rebels in [Settlement] have taken the ownership of the settlement.'"/>
-    <string id="IDC.021" text="Settlement Taken Entries"/>
-    <string id="IDC.021Hint" text="Texts like '[somebody] has claimed [some settlement} currently held by the [some faction]'"/>
-    <string id="IDC.022" text="Taken Prisoner Entries"/>
-    <string id="IDC.022Hint" text="Texts like '[somebody] has been taken prisoner by [someone else]'"/>
-    <string id="IDC.023" text="Tournament Won Entries"/>
-    <string id="IDC.023Hint" text="Texts like '[somebody] has won the tournament at [some town]'"/>
-    <string id="IDC.024" text="Hero Levelled Up"/>
-    <string id="IDC.024Hint" text="Texts like '[hero] gained a level'"/>
-    <string id="IDC.025" text="Hero Gained Skill"/>
-    <string id="IDC.025Hint" text="Texts like '[hero] gained [some] skill points etc..'"/>
-    <string id="IDC.026" text="Debug Logger"/>
-    <string id="IDC.026Hint" text="Enable or Disable debug messages"/>
-    <string id="IDC.027" text="Debug Filter Out Everything"/>
-    <string id="IDC.027Hint" text="Enable or Disable filtering out every log"/>
-    <string id="IDC.028" text="Enable global override setting"/>
-    <string id="IDC.028Hint" text="Enable [ticked] or Disable [unticked]"/>
-    <string id="IDC.029" text="Global filter mode"/>
-    <string id="IDC.029Hint" text="All the settings will use this if global override is active"/>
-    
-    <string id="IDC.030" text="Refresh generic filter settings"/>
-    <string id="IDC.030Hint" text="Those settings refresh at game start - you can click this to force refresh. Changes do not refresh UI-wise, you need to leave and enter to see them!"/>
-    <string id="IDC.031" text="Filter Hero adopting child"/>
-    <string id="IDC.031Hint" text="Text like '[Hero] adopted a child [Child]'"/>
-    <string id="IDC.032" text="Filter Hero promoted"/>
-    <string id="IDC.032Hint" text="Text like '[Hero] has been promoted to tier [Tier]'"/>
-    <string id="IDC.033" text="Filter Hero recruited by lord"/>
-    <string id="IDC.033Hint" text="Text like '[Lord] recruited [Hero]'"/>
-    <string id="IDC.034" text="Filter Hero no longer employeed"/>
-    <string id="IDC.034Hint" text="Text like '[Hero] is no longer employeed by [Lord]'"/>
-    <string id="IDC.035" text="Generic filter strings"/>
-    <string id="IDC.035Hint" text="This is a list of localization Ids to be seeked out and filtered. Warning, this will filter out ALL instances of given translation! Usage: Type out string to search for separated by `;` symbol."/>
+		<string id="IDC.G000" text="Log Entries Filter Modes"/>
+		<string id="IDC.G001" text="Notifications Filter Modes"/>
+		<string id="IDC.G002" text="Debug"/>
+		<string id="IDC.G003" text="Global Settings"/>
+		<string id="IDC.G004" text="Compatibility Mode"/>
+		<string id="IDC.G005" text="Advanced"/>
 
-    <string id="IDC.036" text="Filter new part unlocked"/>
-    <string id="IDC.036Hint" text="Text like 'New Smiting Part Unlocked: [Part] for [Weapon]'"/>
-    <string id="IDC.037" text="Filter notables relations"/>
-    <string id="IDC.037Hint" text="Text like 'Your relation increased by [relation] with nearby notables'"/>
-    <string id="IDC.038" text="On Relation Change Positive"/>
-    <string id="IDC.038Hint" text="Relation changed notifications positive value. If new relation is in positive (0, 100) and lower or equal this value, show notification. Set to -1 to disable all positive relation notifications"/>
-    <string id="IDC.039" text="On Relation Change Negative"/>
-    <string id="IDC.039Hint" text="Relation changed notifications negative value. If new relation is in negative (-100, -1) and higher or equal this value, show notification. Set to 0 to disable all positive negative notifications'"/>
-    <string id="IDC.040" text="Filter high security relation change"/>
-    <string id="IDC.040Hint" text="Notification when relation increases due to high security"/>
-    <string id="IDC.041" text="Filter high loyalty relation change"/>
-    <string id="IDC.041Hint" text="Notification when relation increases due to high loyalty"/>
-  </strings>
+		<string id="IDC.GS01" text="Serve As Soldier"/>
+
+		<string id="IDC.Gen1" text="Refresh" />
+
+		<string id="IDC.001" text="Enable mod"/>
+		<string id="IDC.001Hint" text="Enable [ticked] or Disable [unticked]"/>
+		<string id="IDC.002" text="Army Dispersion Entries"/>
+		<string id="IDC.002Hint" text="Texts like '[some army] has been disbanded'"/>
+		<string id="IDC.003" text="Raiding Entries"/>
+		<string id="IDC.003Hint" text="Texts like '[some army] is raiding [some settlement]'"/>
+		<string id="IDC.004" text="Settlements Siege Entries"/>
+		<string id="IDC.004Hint" text="Texts like '[some town/castle] is besieged'"/>
+		<string id="IDC.005" text="Character Born Entries"/>
+		<string id="IDC.005Hint" text="Texts like '[child] was born to [some lord]'"/>
+		<string id="IDC.006" text="Lord's quarrel Entries"/>
+		<string id="IDC.006Hint" text="Something with lords insulting each other"/>
+		<string id="IDC.007" text="Death Entries"/>
+		<string id="IDC.007Hint" text="Texts like '[some guy] died of old age.' or '[some lord] was executed by [some other lord]'"/>
+		<string id="IDC.008" text="Marriage Entries"/>
+		<string id="IDC.008Hint" text="Texts like '[some character] married [some other character]'"/>
+		<string id="IDC.009" text="Child Birth Entries"/>
+		<string id="IDC.009Hint" text="Those texts are related to player's babies"/>
+		<string id="IDC.010" text="Clan Changing Kingdom Entries"/>
+		<string id="IDC.010Hint" text="Texts regarding Clans switching kingdoms"/>
+		<string id="IDC.011" text="War Declaration Entries"/>
+		<string id="IDC.011Hint" text="Texts like '[some kingdom] declared war on [some other kingdom]'"/>
+		<string id="IDC.012" text="End Captivity Entries"/>
+		<string id="IDC.012Hint" text="Any text regarding end of captivity, like paid ransom or escape"/>
+		<string id="IDC.013" text="Army Gathering Entries"/>
+		<string id="IDC.013Hint" text="Texts like '[some lord] gathers army at [somewhere]'"/>
+		<string id="IDC.014" text="Kingdom Concluded Decision Entries"/>
+		<string id="IDC.014Hint" text="Texts like '[faction] [has done something] with e.g.: major support'"/>
+		<string id="IDC.015" text="Kingdom Destroyed Entries"/>
+		<string id="IDC.015Hint" text="Texts like '[kingdom] has been destroyed'"/>
+		<string id="IDC.016" text="Kingdom Peace Entries"/>
+		<string id="IDC.016Hint" text="Texts like '[some kingdom] made peace with [some other kingdom]'"/>
+		<string id="IDC.017" text="Mercenary Clan Changed Kingdom Entries"/>
+		<string id="IDC.017Hint" text="Texts like '[some mercenaries] joined/left [some kingdom]'"/>
+		<string id="IDC.018" text="Battle End Entries"/>
+		<string id="IDC.018Hint" text="Texts like '[some hero] has defeated [some other hero]'"/>
+		<string id="IDC.019" text="Pregnancy Entries"/>
+		<string id="IDC.019Hint" text="Texts like '[some woman] is pregnant'"/>
+		<string id="IDC.020" text="Rebellion Entries"/>
+		<string id="IDC.020Hint" text="Texts like 'Rebels in [Settlement] have taken the ownership of the settlement.'"/>
+		<string id="IDC.021" text="Settlement Taken Entries"/>
+		<string id="IDC.021Hint" text="Texts like '[somebody] has claimed [some settlement} currently held by the [some faction]'"/>
+		<string id="IDC.022" text="Taken Prisoner Entries"/>
+		<string id="IDC.022Hint" text="Texts like '[somebody] has been taken prisoner by [someone else]'"/>
+		<string id="IDC.023" text="Tournament Won Entries"/>
+		<string id="IDC.023Hint" text="Texts like '[somebody] has won the tournament at [some town]'"/>
+		<string id="IDC.024" text="Hero Levelled Up"/>
+		<string id="IDC.024Hint" text="Texts like '[hero] gained a level'"/>
+		<string id="IDC.025" text="Hero Gained Skill"/>
+		<string id="IDC.025Hint" text="Texts like '[hero] gained [some] skill points etc..'"/>
+		<string id="IDC.026" text="Debug Logger"/>
+		<string id="IDC.026Hint" text="Enable or Disable debug messages"/>
+		<string id="IDC.027" text="Debug Filter Out Everything"/>
+		<string id="IDC.027Hint" text="Enable or Disable filtering out every log"/>
+		<string id="IDC.028" text="Enable global override setting"/>
+		<string id="IDC.028Hint" text="Enable [ticked] or Disable [unticked]"/>
+		<string id="IDC.029" text="Global filter mode"/>
+		<string id="IDC.029Hint" text="All the settings will use this if global override is active"/>
+
+		<string id="IDC.030" text="Refresh generic filter settings"/>
+		<string id="IDC.030Hint" text="Those settings refresh at game start - you can click this to force refresh. Changes do not refresh UI-wise, you need to leave and enter to see them!"/>
+		<string id="IDC.031" text="Filter Hero adopting child"/>
+		<string id="IDC.031Hint" text="Text like '[Hero] adopted a child [Child]'"/>
+		<string id="IDC.032" text="Filter Hero promoted"/>
+		<string id="IDC.032Hint" text="Text like '[Hero] has been promoted to tier [Tier]'"/>
+		<string id="IDC.033" text="Filter Hero recruited by lord"/>
+		<string id="IDC.033Hint" text="Text like '[Lord] recruited [Hero]'"/>
+		<string id="IDC.034" text="Filter Hero no longer employeed"/>
+		<string id="IDC.034Hint" text="Text like '[Hero] is no longer employeed by [Lord]'"/>
+		<string id="IDC.035" text="Generic filter strings"/>
+		<string id="IDC.035Hint" text="This is a list of localization Ids to be seeked out and filtered. Warning, this will filter out ALL instances of given translation! Usage: Type out string to search for separated by `;` symbol."/>
+
+		<string id="IDC.036" text="Filter new part unlocked"/>
+		<string id="IDC.036Hint" text="Text like 'New Smiting Part Unlocked: [Part] for [Weapon]'"/>
+		<string id="IDC.037" text="Filter notables relations"/>
+		<string id="IDC.037Hint" text="Text like 'Your relation increased by [relation] with nearby notables'"/>
+		<string id="IDC.038" text="On Relation Change Positive"/>
+		<string id="IDC.038Hint" text="Relation changed notifications positive value. If new relation is in positive (0, 100) and lower or equal this value, show notification. Set to -1 to disable all positive relation notifications"/>
+		<string id="IDC.039" text="On Relation Change Negative"/>
+		<string id="IDC.039Hint" text="Relation changed notifications negative value. If new relation is in negative (-100, -1) and higher or equal this value, show notification. Set to 0 to disable all positive negative notifications'"/>
+		<string id="IDC.040" text="Filter high security relation change"/>
+		<string id="IDC.040Hint" text="Notification when relation increases due to high security"/>
+		<string id="IDC.041" text="Filter high loyalty relation change"/>
+		<string id="IDC.041Hint" text="Notification when relation increases due to high loyalty"/>
+		<string id="IDC.042" text="Siege weapons hits"/>
+		<string id="IDC.042Hint" text="Notification when siege weapons of settlement/besieger hit the other's party weapons"/>
+	</strings>
 </base>
