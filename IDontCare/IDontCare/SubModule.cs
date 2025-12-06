@@ -1,7 +1,6 @@
 ﻿using HarmonyLib;
 using IDontCare.Filtering;
 using System.Reflection;
-using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 
 namespace IDontCare
@@ -22,11 +21,6 @@ namespace IDontCare
         {
             base.OnBeforeInitialModuleScreenSetAsRoot();
             AdvancedFiltering.Initialize();
-        }
-
-        public override void OnCampaignStart(Game game, object starterObject)
-        {
-            base.OnCampaignStart(game, starterObject);
         }
     }
 }
