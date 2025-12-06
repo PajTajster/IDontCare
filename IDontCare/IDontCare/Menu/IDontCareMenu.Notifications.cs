@@ -84,5 +84,20 @@ namespace IDontCare.Menu
             }
         }
         private bool _filterHighLoyaltyRelationChanged = false;
+
+
+        [SettingPropertyBool("{=IDC.042}Siege weapons hits", HintText = "{=IDC.042Hint}Notification when siege weapons of settlement/besieger hit the other's party weapons", RequireRestart = false, Order = 7)]
+        [SettingPropertyGroup(NotificationGroupName, GroupOrder = NotificationsGroupOrder)]
+        public bool FilterSiegeWeaponsHits
+        {
+            get => _filterSiegeWeaponsHits;
+            set
+            {
+                AdvancedFiltering.HandleGenericStringSearchingFlag(value, "{=FnkYfyGa}");
+                AdvancedFiltering.HandleGenericStringSearchingFlag(value, "{=gqdsXVNi}");
+                _filterSiegeWeaponsHits = value;
+            }
+        }
+        private bool _filterSiegeWeaponsHits = false;
     }
 }
