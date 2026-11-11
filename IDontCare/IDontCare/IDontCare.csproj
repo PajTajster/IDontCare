@@ -98,7 +98,7 @@
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Bannerlord.ReferenceAssemblies.Core">
-      <Version>1.3.9.103334</Version>
+      <Version>1.4.8.119303</Version>
     </PackageReference>
     <PackageReference Include="Bannerlord.UIExtenderEx">
       <Version>2.13.2</Version>

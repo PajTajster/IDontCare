@@ -22,7 +22,7 @@ namespace IDontCare.Menu
             get => _filterNewPartUnlocked;
             set
             {
-                AdvancedFiltering.HandleGenericStringSearchingFlag(value, "{=o0qwDa0q}");
+                AdvancedFiltering.HandleGenericStringSearchingFlag(value, "{=p9F90bc0}");
                 _filterNewPartUnlocked = value;
             }
         }
@@ -37,7 +37,7 @@ namespace IDontCare.Menu
             get => _filterRelationIncreased;
             set
             {
-                AdvancedFiltering.HandleGenericStringSearchingFlag(value, "{=p9F90bc0}");
+                AdvancedFiltering.HandleGenericStringSearchingFlag(value, "{=o0qwDa0q}");
                 _filterRelationIncreased = value;
             }
         }
