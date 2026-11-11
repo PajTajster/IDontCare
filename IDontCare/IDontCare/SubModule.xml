@@ -9,10 +9,10 @@
   <ModuleType value="Community" />
   <Url value="https://www.nexusmods.com/mountandblade2bannerlord/mods/2175" />
   <DependedModules>
-    <DependedModule Id="Native" DependentVersion="v1.3.9"/>
-    <DependedModule Id="SandBoxCore" DependentVersion="v1.3.9"/>
-    <DependedModule Id="Sandbox" DependentVersion="v1.3.9"/>
-    <DependedModule Id="StoryMode" DependentVersion="v1.3.9"/>
+    <DependedModule Id="Native" DependentVersion="v1.4.8"/>
+    <DependedModule Id="SandBoxCore" DependentVersion="v1.4.8"/>
+    <DependedModule Id="Sandbox" DependentVersion="v1.4.8"/>
+    <DependedModule Id="StoryMode" DependentVersion="v1.4.8"/>
     <DependedModule Id="Bannerlord.MBOptionScreen" DependentVersion="v5.11.3"/>
   </DependedModules>
   <DependedModuleMetadatas>
